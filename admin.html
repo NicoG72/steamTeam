@@ -86,7 +86,7 @@
   <!-- Modal -->
   <div class="modal fade" id="modalProducto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-      <div class="modal-content">
+      <div class="modal-content bg-dark text-light">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Producto</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -105,6 +105,18 @@
               <label class="form-label">Categoria</label>
               <input type="text" class="form-control" id="categoria" placeholder="Categoria del Producto" />
             </div>
+            <div class="mb-3">
+              <div class="form-check">
+                  <input type="checkbox" id="checkDestacar" class="form-check-input">
+                  <label class="form-check-label">Destacar Juego</label>       
+              </div>
+           </div>
+           <div class="mb-3">
+            <div class="form-check">
+                <input type="checkbox" id="checkDestacar" class="form-check-input">
+                <label class="form-check-label">Publicar</label>       
+            </div>
+         </div>
             <button class="btn btn-primary" type="submit">Guardar</button>
           </form>
         </div>
