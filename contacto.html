@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta author="" content="">
+  <link rel="shortcut icon" href="img/steam-icon.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/stylesheet.css">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init("user_CKkMDv2H6AeHBqoNvuu8F");
+    })();
+  </script>
+  <title>Formulario de Contacto</title>
+</head>
+
+<body class="colorTexto colorBase">
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html"> <i class="fab fa-steam fa-3x"></i></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="contacto.html">Contactenos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="acercaDeNosotros.html">Acerca de Nosotros</a>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <ul class="navbar-nav me-2">
+              <li class="nav-item">
+                <a class="nav-link" href="login.html">Login</a>
+              </li>
+              <li class="nav-item d-none">
+                <a class="nav-link" href="admin.html">Admin</a>
+              </li>
+            </ul>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main class="container-fluid">
+    <div class="row my-3">
+      <div class="col-sm-12 col-md-8">
+        <section class="card border-light ">
+          <div class="card-header colorBase border-light">
+            <h5 class="card-title">Formulario de Contacto</h5>
+          </div>
+          <div class="card-body colorSecundario ">
+            <form onsubmit="camposValidados(event)" id="formContacto">
+              <div class="mb-3">
+                <label class="form-label"> Nombre: </label>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
+                  <input type="text" class="form-control" placeholder="Fernando" id="nombre"
+                    onblur="campoRequerido(this)">
+                  <div class="invalid-feedback">
+                    Ups!. Los datos ingresados son incorrectos, por favor ingresalos nuevamente.
+                  </div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label"> Apellido: </label>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
+                  <input type="text" class="form-control" placeholder="Gutierrez" id="apellido"
+                    onblur="campoRequerido(this)">
+                  <div class="invalid-feedback">
+                    Ups!. Los datos ingresados son incorrectos, por favor ingresalos nuevamente.
+                  </div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label"> Email: </label>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-envelope-fill"></i></span>
+                  <input type="email" class="form-control" placeholder="FerGutierrez@gmail.com" id="mail"
+                    onblur="validarMail(this)">
+                  <div class="invalid-feedback">
+                    Ups!. Los datos ingresados son incorrectos, por favor ingresalos nuevamente.
+                  </div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label"> Numero de Contacto: </label>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-telephone-fill"></i></span>
+                  <input type="number" class="form-control" placeholder="3516504777" id="numContacto"
+                    onblur="numeroRequerido(this)">
+                  <div class="invalid-feedback">
+                    Ups!. Los datos ingresados son incorrectos, por favor ingresalos nuevamente.
+                  </div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label"> Consulta: </label>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-pencil-square"></i></span>
+                  <textarea type="text" class="form-control" placeholder="Ingresa tu consulta" maxlength="250"
+                    id="consulta" onblur="consultaRequerida(this)"></textarea>
+                  <div class="invalid-feedback">
+                    Ups!. Recuerda que tu consulta al menos debe contener 25 caracteres.
+                  </div>
+                </div>
+                <div>
+                  <label class="form-label"> Caracteres ingresados:</label>
+                  <label class="form-label mb-0" id="contador">0/250</label>
+                </div>
+              </div>
+              <div class="mb-3">
+                <div class="form-check">
+                  <input type="radio" class="form-check-input" id="checkTerminos">
+                  <label class="form-check-label efectoPointer" data-bs-toggle="modal" data-bs-target="#modalTerminos">
+                    <p>Terminos y Condiciones</p>
+                  </label>
+                  <div class="invalid-feedback">
+                    Ups! Ocurrio un error, es obligatorio aceptar los Terminos y Condiciones.
+                  </div>
+                </div>
+              </div>
+              <button class="btn colorBase text-light border-light" type="submit">Enviar</button>
+              <button class="btn btn-danger text-light border-light" type="button"
+                onclick="limpiarFormulario()">Borrar</button>
+            </form>
+            <div class="alert alert-success mt-3 d-none" role="alert" id="aviso">
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="col-sm-12 col-md-4">
+        <div class="row">
+          <article class="col-12 mb-2">
+            <div class="card">
+              <div class="card-header bg-danger">
+                <h5 class="card-title">Informacion Importante: </h5>
+              </div>
+              <div class="card-body colorSecundario">
+                <h6 class="card-subtitle mb-2">Campos Requeridos: </h6>
+                <ul>
+                  <li>Nombre: </li>
+                  <li>Apellido:</li>
+                  <li>Email:</li>
+                  <li>Numero de Contacto:</li>
+                  <li>Consulta:</li>
+                  <li>Terminos y condiciones</li>
+                </ul>
+                <p>Los datos cargados en el formulario de contacto, jamas seran utilizados o brindados para el uso de
+                  terceros.</p>
+              </div>
+            </div>
+          </article>
+          <article class="col-12 mb-2">
+            <div class="card">
+              <div class="card-header colorBase">
+                <h5 class="card-title">Espacio Publicitario</h5>
+              </div>
+              <div class="card-body colorSecundario">
+                <h6 class="card-subtitle mb-2 text-muted">Campos Requeridos: </h6>
+                <ul>
+                  <li>Nombre: </li>
+                  <li>Apellido:</li>
+                  <li>Email:</li>
+                  <li>Numero de Contacto:</li>
+                  <li>Consulta:</li>
+                  <li>Terminos y condiciones</li>
+                </ul>
+                <p>Los datos cargados en el fomulario de contacto, jamas seran utilizados o brindados para el uso de
+                  terceros.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+    </div>
+  </main>
+  <!-- Modal Terminos y Condiciones-->
+  <div class="modal fade" id="modalTerminos" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content border-light">
+        <div class="modal-header bg-danger container-fluid">
+          <h5 class="modal-title" id="staticBackdropLabel">Terminos y Condiciones</h5>
+        </div>
+        <div class="modal-body container-fluid bg-light text-dark">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis enim aliquam tempore quam in voluptatem
+            itaque expedita eaque? Rem laborum ut quas, sit molestiae nisi blanditiis tempore voluptate at magnam cum
+            asperiores quidem reprehenderit error eveniet quae ex consequatur? Est natus beatae error reprehenderit ab
+            adipisci odio nulla quaerat labore?</p>
+        </div>
+        <div class="modal-footer bg-light container-fluid d-flex justify-content-center">
+          <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Entendido</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class=" container-fluid bg-dark text-light mb-0 py-2">
+    <div class="row my-1">
+      <div class="col-sm-12 col-md-6">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum laboriosam, et, veniam possimus corporis
+          voluptates eligendi autem nisi pariatur quam molestiae perspiciatis aut. Architecto excepturi placeat magnam,
+          reiciendis voluptatem assumenda consectetur! Ducimus libero vero, consequatur necessitatibus aliquid illum
+          animi sed nobis quod rerum, laboriosam distinctio quidem alias sequi officiis eius accusantium sunt
+          recusandae. Corrupti sapiente consequuntur sequi ipsam incidunt corporis?</p>
+      </div>
+      <div class="col-sm-12 col-md-6">
+        <h6 class="mb-3"> Seguinos en nuestras Redes Sociales</h6>
+        <ul class="lista">
+          <li class="mb-2">
+            <div class="input-group"></div>
+            <a href="https://www.instagram.com/steam_games_official/?hl=es" class="text-light" target="blank"><i
+                class="bi bi-instagram fa-2x"></i> Steam
+            </a>
+          </li>
+          <li class="mb-2">
+            <a href="https://twitter.com/steam?lang=es" class="text-light" target="blank"><i
+                class="bi bi-twitter fa-2x"></i>
+              Steam</a>
+          </li>
+          <li class="mb-2">
+            <a href="https://www.twitch.tv/directory/game/Steam" class="text-light" target="black"><i
+                class="bi bi-twitch fa-2x"></i>
+              Steam</a>
+          </li>
+          <li class="mb-2">
+            <a href="https://www.facebook.com/Steam-Argentina-258083814353794/" class="text-light" target="black"><i
+                class="bi bi-facebook fa-2x"></i>
+              Steam</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <p class="text-center">&copy; Todos los derechos reservados.</p>
+  </footer>
+  <script src="https://kit.fontawesome.com/39a5d0f9dd.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+    crossorigin="anonymous"></script>
+  <script src="js/contacto.js"></script>
+</body>
+
+</html>

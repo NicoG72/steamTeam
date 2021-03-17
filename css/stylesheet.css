@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans&display=swap");
+body {
+  font-family: "PT Sans", sans-serif;
+  color: whitesmoke;
+}
+nav {
+  background-color: #1c2122;
+  position: fixed;
+  padding: 13px 8px;
+}
+main {
+  background-color: #104452;
+}
+footer {
+  background-color: #1c2122;
+}
+.colorTexto {
+  color: whitesmoke;
+}
+.colorBase {
+  background-color: #104452;
+}
+.colorSecundario {
+  background-color: #145567;
+}
+ .efectoPointer p:hover {
+   cursor: pointer;
+ }
+
+ a{
+  text-decoration: none;
+ }
+
+ li {
+  list-style: none;
+}
