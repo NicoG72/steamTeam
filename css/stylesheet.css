@@ -34,3 +34,16 @@ footer {
  li {
   list-style: none;
 }
+.ancho{
+  width: 75%;
+}
+
+@media all and (max-width: 576px){
+  .responsive{
+    width: 25%;
+    padding: 0%;
+  }
+  .ancho{
+    width: 100%;
+  }
+}
