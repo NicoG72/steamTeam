@@ -1,407 +1,746 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta author="" content="" />
+    <link rel="shortcut icon" href="img/steam-icon.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/stylesheet.css" />
+    <title>Steam Game</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <meta name="keywords" content="">
-  <meta author="" content="">
-  <link rel="shortcut icon" href="img/steam-icon.png" type="image/x-icon">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/stylesheet.css">
-  <title>Formulario de Contacto</title>
-</head>
-
-<body class="colorTexto colorBase">
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.html"> <i class="fab fa-steam fa-3x"></i></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link " href="contacto.html">Contactenos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="acercaDeNosotros.html">Acerca de Nosotros</a>
-            </li>
-          </ul>
-          <form class="d-flex">
-            <ul class="navbar-nav me-2">
+  <body class="colorTexto colorBase">
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">
+            <i class="fab fa-steam fa-3x"></i
+          ></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" href="login.html">Login</a>
+                <a class="nav-link active" aria-current="page" href="index.html"
+                  >Inicio</a
+                >
               </li>
-              <li class="nav-item d-none">
-                <a class="nav-link" href="admin.html">Admin</a>
+              <li class="nav-item">
+                <a class="nav-link" href="contacto.html">Contactenos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="acercaDeNosotros.html"
+                  >Acerca de Nosotros</a
+                >
               </li>
             </ul>
+            <form class="d-flex">
+              <ul class="navbar-nav me-2">
+                <li class="nav-item">
+                  <a class="nav-link" href="login.html">Login</a>
+                </li>
+                <li class="nav-item d-none">
+                  <a class="nav-link" href="admin.html">Admin</a>
+                </li>
+              </ul>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-fluid">
+      <section class="container">
+        <h1 class="displey-4">Elegí tu juego favorito</h1>
+        <div class="row justify-content-end">
+          <form class="col-sm-12 col-md-6 col-lg-4 d-flex">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Que juego buscas..."
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Buscar
+            </button>
           </form>
         </div>
-      </div>
-    </nav>
-  </header>
-
-  <main class="container-fluid">
-    <section class="container">
-      <h1 class="displey-4">Elegí tu juego favorito</h1>
-      <div class="row justify-content-end">
-        <form class="col-sm-12 col-md-6 col-lg-4 d-flex">
-          <input class="form-control me-2" type="search" placeholder="Que juego buscas..." aria-label="Search" />
-          <button class="btn btn-outline-success" type="submit">
-            Buscar
-          </button>
-        </form>
-      </div>
-      <section class="mt-5">
-        <div class="card mb-3">
-          <div class="row g-0">
-            <div class="col-md-8">
-              <img src="img/inicio/grandtheftauto.jpg" class="w-100" alt="Juego grand theft auto" />
-            </div>
-            <div class="col-md-4 bg-dark d-flex align-items-center">
-              <div class="card-body">
-                <h5 class="card-title">Grand teft auto</h5>
-                <p class="card-text">Deportes</p>
-                <p class="card-text">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Iste, quam?
-                </p>
-                <div>
-                  <button class="btn btn-primary">
-                    <a class="estilo text-light" href="detalleJuego.html">Ver mas...</a>
-                  </button>
+        <section class="mt-5">
+          <div class="card mb-3">
+            <div class="row g-0">
+              <div class="col-md-8">
+                <img
+                  src="img/inicio/grandtheftauto.jpg"
+                  class="w-100"
+                  alt="Juego grand theft auto"
+                />
+              </div>
+              <div class="col-md-4 bg-dark d-flex align-items-center">
+                <div class="card-body">
+                  <h5 class="card-title mt-3">Grand teft auto</h5>
+                  <p class="card-text mt-3">Deportes</p>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Iste, quam?
+                  </p>
+                  <div>
+                    <button class="btn btn-primary">
+                      <a class="estilo text-light" href="detalleJuego.html"
+                        >Ver mas...</a
+                      >
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+        </section>
+      </section>
+      <section>
+        <h3 class="container">Deportes</h3>
+        <div
+          id="carouselPrimero"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row d-flex mx-auto ancho">
+                <div class="col-sm-3 my-2 responsive">
+                  <a href="#"
+                    ><img
+                      src="img/inicio/grantheft.jpg"
+                      class="w-100"
+                      alt="..."
+                  /></a>
+                </div>
+                <div class="col-sm-3 my-2 responsive">
+                  <a href="#"
+                    ><img src="img/inicio/fifa_20.png" class="w-100" alt="..."
+                  /></a>
+                </div>
+                <div class="col-sm-3 my-2 responsive">
+                  <a href="#"
+                    ><img src="img/inicio/nba_2k20.jpg" class="w-100" alt="..."
+                  /></a>
+                </div>
+                <div class="col-sm-3 my-2 responsive">
+                  <a href="#"
+                    ><img
+                      src="img/inicio/mario-kart-8-deluxe-switch-hero.jpg"
+                      class="w-100"
+                      alt="..."
+                  /></a>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row d-flex mx-auto ancho">
+                <div class="col-sm-3 my-2 responsive">
+                  <a href="#"
+                    ><img
+                      src="img/inicio/grandtheftauto.jpg"
+                      class="w-100"
+                      alt="..."
+                  /></a>
+                </div>
+                <div class="col-sm-3 my-2 responsive">
+                  <a href="#"
+                    ><img
+                      src="img/inicio/grandtheftauto.jpg"
+                      class="w-100"
+                      alt="..."
+                  /></a>
+                </div>
+                <div class="col-sm-3 my-2 responsive">
+                  <a href="#"
+                    ><img
+                      src="img/inicio/grandtheftauto.jpg"
+                      class="w-100"
+                      alt="..."
+                  /></a>
+                </div>
+                <div class="col-sm-3 my-2 responsive">
+                  <a href="#"
+                    ><img
+                      src="img/inicio/grandtheftauto.jpg"
+                      class="w-100"
+                      alt="..."
+                  /></a>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row d-flex mx-auto ancho">
+                <div class="col-sm-3 my-2 responsive">
+                  <a href="#"
+                    ><img
+                      src="img/inicio/grandtheftauto.jpg"
+                      class="w-100"
+                      alt="..."
+                  /></a>
+                </div>
+                <div class="col-sm-3 my-2 responsive">
+                  <a href="#"
+                    ><img
+                      src="img/inicio/grandtheftauto.jpg"
+                      class="w-100"
+                      alt="..."
+                  /></a>
+                </div>
+                <div class="col-sm-3 my-2 responsive">
+                  <a href="#"
+                    ><img
+                      src="img/inicio/grandtheftauto.jpg"
+                      class="w-100"
+                      alt="..."
+                  /></a>
+                </div>
+                <div class="col-sm-3 my-2 responsive">
+                  <a href="#"
+                    ><img
+                      src="img/inicio/grandtheftauto.jpg"
+                      class="w-100"
+                      alt="..."
+                  /></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselPrimero"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden ml-3">Previous</span>
+            </button>
+          </div>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselPrimero"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
       </section>
-    </section>
-    <section>
-      <!-- <div class="juego-deportes container">
-                <div class="contenedor-titulo-controles">
-                  <h3>Deportes</h3>
-                  <div class="indicadores"></div>
+      <section>
+        <h2 class="container mt-5">Aventuras</h2>
+        <div
+          id="carouselSegundo"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row mx-auto ancho">
+                <div class="col-sm-3 my-2 responsive">
+                  <a href="#"
+                    ><img
+                      src="img/inicio/legend_of_the_zelda.jpg"
+                      class="w-100"
+                      alt="..."
+                  /></a>
                 </div>
-                <div class="contenedor-principal">
-                  <button role="button" id="flecha-izquierda" class="flecha-izquierda"><i class="fas fa-angle-left"></i></button>
-                  <button role="button" id="flecha-derecha" class="flecha-derecha"><i class="fas fa-angle-right"></i></button>
+                <div class="col-sm-3 my-2 responsive">
+                  <a href="#"
+                    ><img
+                      src="img/inicio/super_mario.jpg"
+                      class="w-100"
+                      alt="..."
+                  /></a>
                 </div>
-              </div> -->
-              <h3 class="container">Deportes</h3>
-              <div id="carouselPrimero" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <div class="row d-flex mx-auto ancho">
-                      <div class="col-sm-3 my-2 responsive">
-                        <a href="#"><img src="img/inicio/grantheft.jpg" class="w-100" alt="..."></a>
-                      </div>
-                      <div class="col-sm-3 my-2 responsive">
-                        <a href="#"><img src="img/inicio/fifa_20.png" class="w-100" alt="..."></a>
-                      </div>
-                      <div class="col-sm-3 my-2 responsive">
-                        <a href="#"><img src="img/inicio/nba_2k20.jpg" class="w-100" alt="..."></a>
-                      </div>
-                      <div class="col-sm-3 my-2 responsive">
-                        <a href="#"><img src="img/inicio/mario-kart-8-deluxe-switch-hero.jpg" class="w-100" alt="..."></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <div class="row d-flex mx-auto ancho">
-                      <div class="col-sm-3 my-2 responsive">
-                        <a href="#"><img src="img/inicio/grandtheftauto.jpg" class="w-100" alt="..."></a>
-                      </div>
-                      <div class="col-sm-3 my-2 responsive">
-                        <a href="#"><img src="img/inicio/grandtheftauto.jpg" class="w-100" alt="..."></a>
-                      </div>
-                      <div class="col-sm-3 my-2 responsive">
-                        <a href="#"><img src="img/inicio/grandtheftauto.jpg" class="w-100" alt="..."></a>
-                      </div>
-                      <div class="col-sm-3 my-2 responsive">
-                        <a href="#"><img src="img/inicio/grandtheftauto.jpg" class="w-100" alt="..."></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <div class="row d-flex mx-auto ancho">
-                      <div class="col-sm-3 my-2 responsive">
-                        <a href="#"><img src="img/inicio/grandtheftauto.jpg" class="w-100" alt="..."></a>
-                      </div>
-                      <div class="col-sm-3 my-2 responsive">
-                        <a href="#"><img src="img/inicio/grandtheftauto.jpg" class="w-100" alt="..."></a>
-                      </div>
-                      <div class="col-sm-3 my-2 responsive">
-                        <a href="#"><img src="img/inicio/grandtheftauto.jpg" class="w-100" alt="..."></a>
-                      </div>
-                      <div class="col-sm-3 my-2 responsive">
-                        <a href="#"><img src="img/inicio/grandtheftauto.jpg" class="w-100" alt="..."></a>
-                      </div>
-                    </div>
-                  </div>
+                <div class="col-sm-3 my-2 responsive">
+                  <a href="#"
+                    ><img
+                      src="img/inicio/sony_and_sega.jpg"
+                      class="w-100"
+                      alt="..."
+                  /></a>
                 </div>
-                <div>
-                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselPrimero" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden ml-3">Previous</span>
-                  </button>
+                <div class="col-sm-3 my-2 responsive">
+                  <a href="#"
+                    ><img
+                      src="img/inicio/luigi_mansion.jpg"
+                      class="w-100"
+                      alt="..."
+                  /></a>
                 </div>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselPrimero" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
               </div>
-            </section>
-            <section>
-              <h2 class="container mt-5">Aventuras</h2>
-              <div id="carouselSegundo" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <div class="row mx-auto ancho">
-                      <div class="col-sm-3 my-2 responsive">
-                        <a href="#"><img src="img/inicio/legend_of_the_zelda.jpg" class="w-100" alt="..."></a>
-                      </div>
-                      <div class="col-sm-3 my-2 responsive">
-                        <a href="#"><img src="img/inicio/super_mario.jpg" class="w-100" alt="..."></a>
-                      </div>
-                      <div class="col-sm-3 my-2 responsive">
-                        <a href="#"><img src="img/inicio/sony_and_sega.jpg" class="w-100" alt="..."></a>
-                      </div>
-                      <div class="col-sm-3 my-2 responsive">
-                        <a href="#"><img src="img/inicio/luigi_mansion.jpg" class="w-100" alt="..."></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <div class="row d-flex mx-auto ancho">
-                      <div class="col-sm-3 my-2 responsive">
-                        <a href="#"><img src="img/inicio/grandtheftauto.jpg" class="w-100" alt="..."></a>
-                      </div>
-                      <div class="col-sm-3 my-2 responsive">
-                        <a href="#"><img src="img/inicio/grandtheftauto.jpg" class="w-100" alt="..."></a>
-                      </div>
-                      <div class="col-sm-3 my-2 responsive">
-                        <a href="#"><img src="img/inicio/grandtheftauto.jpg" class="w-100" alt="..."></a>
-                      </div>
-                      <div class="col-sm-3 my-2 responsive">
-                        <a href="#"><img src="img/inicio/grandtheftauto.jpg" class="w-100" alt="..."></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <div class="row d-flex mx-auto ancho">
-                      <div class="col-sm-3 my-2 responsive">
-                        <a href="#"><img src="img/inicio/grandtheftauto.jpg" class="w-100" alt="..."></a>
-                      </div>
-                      <div class="col-sm-3 my-2 responsive">
-                        <a href="#"><img src="img/inicio/grandtheftauto.jpg" class="w-100" alt="..."></a>
-                      </div>
-                      <div class="col-sm-3 my-2 responsive">
-                        <a href="#"><img src="img/inicio/grandtheftauto.jpg" class="w-100" alt="..."></a>
-                      </div>
-                      <div class="col-sm-3 my-2 responsive">
-                        <a href="#"><img src="img/inicio/grandtheftauto.jpg" class="w-100" alt="..."></a>
-                      </div>
-                    </div>
-                  </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row d-flex mx-auto ancho">
+                <div class="col-sm-3 my-2 responsive">
+                  <a href="#"
+                    ><img
+                      src="img/inicio/grandtheftauto.jpg"
+                      class="w-100"
+                      alt="..."
+                  /></a>
                 </div>
-                <div>
-                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselSegundo" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden ml-3">Previous</span>
-                  </button>
+                <div class="col-sm-3 my-2 responsive">
+                  <a href="#"
+                    ><img
+                      src="img/inicio/grandtheftauto.jpg"
+                      class="w-100"
+                      alt="..."
+                  /></a>
                 </div>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselSegundo" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
+                <div class="col-sm-3 my-2 responsive">
+                  <a href="#"
+                    ><img
+                      src="img/inicio/grandtheftauto.jpg"
+                      class="w-100"
+                      alt="..."
+                  /></a>
+                </div>
+                <div class="col-sm-3 my-2 responsive">
+                  <a href="#"
+                    ><img
+                      src="img/inicio/grandtheftauto.jpg"
+                      class="w-100"
+                      alt="..."
+                  /></a>
+                </div>
               </div>
-            </section>
-            <section>
-              <h2 class="container mt-5">Estrategia</h2>
-              <div id="carouselTercero" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <div class="row d-flex mx-auto ancho">
-                      <div class="col-sm-3 my-2 responsive">
-                        <a href="#"><img src="img/inicio/minecreaft.jpg" class="w-100" alt="..."></a>
-                      </div>
-                      <div class="col-sm-3 my-2 responsive">
-                        <a href="#"><img src="img/inicio/read dead.jpg" class="w-100" alt="..."></a>
-                      </div>
-                      <div class="col-sm-3 my-2 responsive">
-                        <a href="#"><img src="img/inicio/sony_and_sega.jpg" class="w-100" alt="..."></a>
-                      </div>
-                      <div class="col-sm-3 my-2 responsive">
-                        <a href="#"><img src="img/inicio/tombraider.jpg" class="w-100" alt="..."></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <div class="row d-flex mx-auto ancho">
-                      <div class="col-sm-3 my-2 responsive">
-                        <a href="#"><img src="img/inicio/grandtheftauto.jpg" class="w-100" alt="..."></a>
-                      </div>
-                      <div class="col-sm-3 my-2 responsive">
-                        <a href="#"><img src="img/inicio/grandtheftauto.jpg" class="w-100" alt="..."></a>
-                      </div>
-                      <div class="col-sm-3 my-2 responsive">
-                        <a href="#"><img src="img/inicio/grandtheftauto.jpg" class="w-100" alt="..."></a>
-                      </div>
-                      <div class="col-sm-3 my-2 responsive">
-                        <a href="#"><img src="img/inicio/grandtheftauto.jpg" class="w-100" alt="..."></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <div class="row d-flex mx-auto ancho">
-                      <div class="col-sm-3 my-2 responsive">
-                        <a href="#"><img src="img/inicio/grandtheftauto.jpg" class="w-100" alt="..."></a>
-                      </div>
-                      <div class="col-sm-3 my-2 responsive">
-                        <a href="#"><img src="img/inicio/grandtheftauto.jpg" class="w-100" alt="..."></a>
-                      </div>
-                      <div class="col-sm-3 my-2 responsive">
-                        <a href="#"><img src="img/inicio/grandtheftauto.jpg" class="w-100" alt="..."></a>
-                      </div>
-                      <div class="col-sm-3 my-2 responsive">
-                        <a href="#"><img src="img/inicio/grandtheftauto.jpg" class="w-100" alt="..."></a>
-                      </div>
-                    </div>
-                  </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row d-flex mx-auto ancho">
+                <div class="col-sm-3 my-2 responsive">
+                  <a href="#"
+                    ><img
+                      src="img/inicio/grandtheftauto.jpg"
+                      class="w-100"
+                      alt="..."
+                  /></a>
                 </div>
-                <div>
-                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselTercero" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden ml-3">Previous</span>
-                  </button>
+                <div class="col-sm-3 my-2 responsive">
+                  <a href="#"
+                    ><img
+                      src="img/inicio/grandtheftauto.jpg"
+                      class="w-100"
+                      alt="..."
+                  /></a>
                 </div>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselTercero" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
+                <div class="col-sm-3 my-2 responsive">
+                  <a href="#"
+                    ><img
+                      src="img/inicio/grandtheftauto.jpg"
+                      class="w-100"
+                      alt="..."
+                  /></a>
+                </div>
+                <div class="col-sm-3 my-2 responsive">
+                  <a href="#"
+                    ><img
+                      src="img/inicio/grandtheftauto.jpg"
+                      class="w-100"
+                      alt="..."
+                  /></a>
+                </div>
               </div>
-            </section>
-            <section>
-              <h2 class="container mt-5">Infantiles</h2>
-              <div id="carouselCuarto" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <div class="row d-flex mx-auto ancho">
-                      <div class="col-sm-3 my-2 responsive">
-                        <a href="#"><img src="img/inicio/just_dance_2020.webp" class="w-100" alt="..."></a>
-                      </div>
-                      <div class="col-sm-3 my-2 responsive">
-                        <a href="#"><img src="img/inicio/grantheft.jpg" class="w-100" alt="..."></a>
-                      </div>
-                      <div class="col-sm-3 my-2 responsive">
-                        <a href="#"><img src="img/inicio/sega_mega_drive.webp" class="w-100" alt="..."></a>
-                      </div>
-                      <div class="col-sm-3 my-2 responsive">
-                        <a href="#"><img src="img/inicio/Dragon-Ball-Z-Kakarot.jpg" class="w-100" alt="..."></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <div class="row d-flex mx-auto ancho">
-                      <div class="col-sm-3 my-2 responsive">
-                        <a href="#"><img src="img/inicio/grandtheftauto.jpg" class="w-100" alt="..."></a>
-                      </div>
-                      <div class="col-sm-3 my-2 responsive">
-                        <a href="#"><img src="img/inicio/grandtheftauto.jpg" class="w-100" alt="..."></a>
-                      </div>
-                      <div class="col-sm-3 my-2 responsive">
-                        <a href="#"><img src="img/inicio/grandtheftauto.jpg" class="w-100" alt="..."></a>
-                      </div>
-                      <div class="col-sm-3 my-2 responsive">
-                        <a href="#"><img src="img/inicio/grandtheftauto.jpg" class="w-100" alt="..."></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <div class="row d-flex mx-auto ancho">
-                      <div class="col-sm-3 my-2 responsive">
-                        <a href="#"><img src="img/inicio/grandtheftauto.jpg" class="w-100" alt="..."></a>
-                      </div>
-                      <div class="col-sm-3 my-2 responsive">
-                        <a href="#"><img src="img/inicio/grandtheftauto.jpg" class="w-100" alt="..."></a>
-                      </div>
-                      <div class="col-sm-3 my-2 responsive">
-                        <a href="#"><img src="img/inicio/grandtheftauto.jpg" class="w-100" alt="..."></a>
-                      </div>
-                      <div class="col-sm-3 my-2 responsive">
-                        <a href="#"><img src="img/inicio/grandtheftauto.jpg" class="w-100" alt="..."></a>
-                      </div>
-                    </div>
-                  </div>
+            </div>
+          </div>
+          <div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselSegundo"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden ml-3">Previous</span>
+            </button>
+          </div>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselSegundo"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </section>
+      <section>
+        <h2 class="container mt-5">Estrategia</h2>
+        <div
+          id="carouselTercero"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row d-flex mx-auto ancho">
+                <div class="col-sm-3 my-2 responsive">
+                  <a href="#"
+                    ><img
+                      src="img/inicio/minecreaft.jpg"
+                      class="w-100"
+                      alt="..."
+                  /></a>
                 </div>
-                <div>
-                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselCuarto" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden ml-3">Previous</span>
-                  </button>
+                <div class="col-sm-3 my-2 responsive">
+                  <a href="#"
+                    ><img
+                      src="img/inicio/read dead.jpg"
+                      class="w-100"
+                      alt="..."
+                  /></a>
                 </div>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselCuarto" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
+                <div class="col-sm-3 my-2 responsive">
+                  <a href="#"
+                    ><img
+                      src="img/inicio/sony_and_sega.jpg"
+                      class="w-100"
+                      alt="..."
+                  /></a>
+                </div>
+                <div class="col-sm-3 my-2 responsive">
+                  <a href="#"
+                    ><img
+                      src="img/inicio/tombraider.jpg"
+                      class="w-100"
+                      alt="..."
+                  /></a>
+                </div>
               </div>
-    </section>
-  </main>
-  <footer class=" container-fluid bg-dark text-light mb-0 py-2">
-    <div class="row my-1">
-      <div class="col-sm-12 col-md-6">
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum laboriosam, et, veniam possimus corporis
-          voluptates eligendi autem nisi pariatur quam molestiae perspiciatis aut. Architecto excepturi placeat magnam,
-          reiciendis voluptatem assumenda consectetur! Ducimus libero vero, consequatur necessitatibus aliquid illum
-          animi sed nobis quod rerum, laboriosam distinctio quidem alias sequi officiis eius accusantium sunt
-          recusandae. Corrupti sapiente consequuntur sequi ipsam incidunt corporis?</p>
+            </div>
+            <div class="carousel-item">
+              <div class="row d-flex mx-auto ancho">
+                <div class="col-sm-3 my-2 responsive">
+                  <a href="#"
+                    ><img
+                      src="img/inicio/grandtheftauto.jpg"
+                      class="w-100"
+                      alt="..."
+                  /></a>
+                </div>
+                <div class="col-sm-3 my-2 responsive">
+                  <a href="#"
+                    ><img
+                      src="img/inicio/grandtheftauto.jpg"
+                      class="w-100"
+                      alt="..."
+                  /></a>
+                </div>
+                <div class="col-sm-3 my-2 responsive">
+                  <a href="#"
+                    ><img
+                      src="img/inicio/grandtheftauto.jpg"
+                      class="w-100"
+                      alt="..."
+                  /></a>
+                </div>
+                <div class="col-sm-3 my-2 responsive">
+                  <a href="#"
+                    ><img
+                      src="img/inicio/grandtheftauto.jpg"
+                      class="w-100"
+                      alt="..."
+                  /></a>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row d-flex mx-auto ancho">
+                <div class="col-sm-3 my-2 responsive">
+                  <a href="#"
+                    ><img
+                      src="img/inicio/grandtheftauto.jpg"
+                      class="w-100"
+                      alt="..."
+                  /></a>
+                </div>
+                <div class="col-sm-3 my-2 responsive">
+                  <a href="#"
+                    ><img
+                      src="img/inicio/grandtheftauto.jpg"
+                      class="w-100"
+                      alt="..."
+                  /></a>
+                </div>
+                <div class="col-sm-3 my-2 responsive">
+                  <a href="#"
+                    ><img
+                      src="img/inicio/grandtheftauto.jpg"
+                      class="w-100"
+                      alt="..."
+                  /></a>
+                </div>
+                <div class="col-sm-3 my-2 responsive">
+                  <a href="#"
+                    ><img
+                      src="img/inicio/grandtheftauto.jpg"
+                      class="w-100"
+                      alt="..."
+                  /></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselTercero"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden ml-3">Previous</span>
+            </button>
+          </div>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselTercero"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </section>
+      <section>
+        <h2 class="container mt-5">Infantiles</h2>
+        <div id="carouselCuarto" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row d-flex mx-auto ancho">
+                <div class="col-sm-3 my-2 responsive">
+                  <a href="#"
+                    ><img
+                      src="img/inicio/just_dance_2020.webp"
+                      class="w-100"
+                      alt="..."
+                  /></a>
+                </div>
+                <div class="col-sm-3 my-2 responsive">
+                  <a href="#"
+                    ><img
+                      src="img/inicio/grantheft.jpg"
+                      class="w-100"
+                      alt="..."
+                  /></a>
+                </div>
+                <div class="col-sm-3 my-2 responsive">
+                  <a href="#"
+                    ><img
+                      src="img/inicio/sega_mega_drive.webp"
+                      class="w-100"
+                      alt="..."
+                  /></a>
+                </div>
+                <div class="col-sm-3 my-2 responsive">
+                  <a href="#"
+                    ><img
+                      src="img/inicio/Dragon-Ball-Z-Kakarot.jpg"
+                      class="w-100"
+                      alt="..."
+                  /></a>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row d-flex mx-auto ancho">
+                <div class="col-sm-3 my-2 responsive">
+                  <a href="#"
+                    ><img
+                      src="img/inicio/grandtheftauto.jpg"
+                      class="w-100"
+                      alt="..."
+                  /></a>
+                </div>
+                <div class="col-sm-3 my-2 responsive">
+                  <a href="#"
+                    ><img
+                      src="img/inicio/grandtheftauto.jpg"
+                      class="w-100"
+                      alt="..."
+                  /></a>
+                </div>
+                <div class="col-sm-3 my-2 responsive">
+                  <a href="#"
+                    ><img
+                      src="img/inicio/grandtheftauto.jpg"
+                      class="w-100"
+                      alt="..."
+                  /></a>
+                </div>
+                <div class="col-sm-3 my-2 responsive">
+                  <a href="#"
+                    ><img
+                      src="img/inicio/grandtheftauto.jpg"
+                      class="w-100"
+                      alt="..."
+                  /></a>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row d-flex mx-auto ancho">
+                <div class="col-sm-3 my-2 responsive">
+                  <a href="#"
+                    ><img
+                      src="img/inicio/grandtheftauto.jpg"
+                      class="w-100"
+                      alt="..."
+                  /></a>
+                </div>
+                <div class="col-sm-3 my-2 responsive">
+                  <a href="#"
+                    ><img
+                      src="img/inicio/grandtheftauto.jpg"
+                      class="w-100"
+                      alt="..."
+                  /></a>
+                </div>
+                <div class="col-sm-3 my-2 responsive">
+                  <a href="#"
+                    ><img
+                      src="img/inicio/grandtheftauto.jpg"
+                      class="w-100"
+                      alt="..."
+                  /></a>
+                </div>
+                <div class="col-sm-3 my-2 responsive">
+                  <a href="#"
+                    ><img
+                      src="img/inicio/grandtheftauto.jpg"
+                      class="w-100"
+                      alt="..."
+                  /></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselCuarto"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden ml-3">Previous</span>
+            </button>
+          </div>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselCuarto"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </section>
+    </main>
+    <footer class="container-fluid bg-dark text-light mb-0 py-2">
+      <div class="row my-1">
+        <div class="col-sm-12 col-md-6">
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum
+            laboriosam, et, veniam possimus corporis voluptates eligendi autem
+            nisi pariatur quam molestiae perspiciatis aut. Architecto excepturi
+            placeat magnam, reiciendis voluptatem assumenda consectetur! Ducimus
+            libero vero, consequatur necessitatibus aliquid illum animi sed
+            nobis quod rerum, laboriosam distinctio quidem alias sequi officiis
+            eius accusantium sunt recusandae. Corrupti sapiente consequuntur
+            sequi ipsam incidunt corporis?
+          </p>
+        </div>
+        <div class="col-sm-12 col-md-6">
+          <h6 class="mb-3">Seguinos en nuestras Redes Sociales</h6>
+          <ul class="lista">
+            <li class="mb-2">
+              <div class="input-group"></div>
+              <a
+                href="https://www.instagram.com/steam_games_official/?hl=es"
+                class="text-light"
+                target="blank"
+                ><i class="bi bi-instagram fa-2x"></i> Steam
+              </a>
+            </li>
+            <li class="mb-2">
+              <a
+                href="https://twitter.com/steam?lang=es"
+                class="text-light"
+                target="blank"
+                ><i class="bi bi-twitter fa-2x"></i> Steam</a
+              >
+            </li>
+            <li class="mb-2">
+              <a
+                href="https://www.twitch.tv/directory/game/Steam"
+                class="text-light"
+                target="black"
+                ><i class="bi bi-twitch fa-2x"></i> Steam</a
+              >
+            </li>
+            <li class="mb-2">
+              <a
+                href="https://www.facebook.com/Steam-Argentina-258083814353794/"
+                class="text-light"
+                target="black"
+                ><i class="bi bi-facebook fa-2x"></i> Steam</a
+              >
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="col-sm-12 col-md-6">
-        <h6 class="mb-3"> Seguinos en nuestras Redes Sociales</h6>
-        <ul class="lista">
-          <li class="mb-2">
-            <div class="input-group"></div>
-            <a href="https://www.instagram.com/steam_games_official/?hl=es" class="text-light" target="blank"><i
-                class="bi bi-instagram fa-2x"></i> Steam
-            </a>
-          </li>
-          <li class="mb-2">
-            <a href="https://twitter.com/steam?lang=es" class="text-light" target="blank"><i
-                class="bi bi-twitter fa-2x"></i>
-              Steam</a>
-          </li>
-          <li class="mb-2">
-            <a href="https://www.twitch.tv/directory/game/Steam" class="text-light" target="black"><i
-                class="bi bi-twitch fa-2x"></i>
-              Steam</a>
-          </li>
-          <li class="mb-2">
-            <a href="https://www.facebook.com/Steam-Argentina-258083814353794/" class="text-light" target="black"><i
-                class="bi bi-facebook fa-2x"></i>
-              Steam</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <p class="text-center">&copy; Todos los derechos reservados.</p>
-  </footer>
-  <script src="https://kit.fontawesome.com/39a5d0f9dd.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-    crossorigin="anonymous"></script>
-  <script src="js/contacto.js"></script>
-</body>
-
+      <p class="text-center">&copy; Todos los derechos reservados.</p>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/39a5d0f9dd.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/contacto.js"></script>
+  </body>
 </html>
