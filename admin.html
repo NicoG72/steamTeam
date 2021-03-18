@@ -116,7 +116,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form id="Producto" onsubmit="guardarProducto(event)">
+          <form id="formProducto" onsubmit="agregarProducto(event)">
             <div class="mb-3">
               <label class="form-label">Código</label>
               <input type="text" class="form-control" id="codigo" placeholder="Ingrese un codigo" />
@@ -137,7 +137,7 @@
            </div>
            <div class="mb-3">
             <div class="form-check">
-                <input type="checkbox" id="checkDestacar" class="form-check-input">
+                <input type="checkbox" id="checkPublicar" class="form-check-input">
                 <label class="form-check-label">Publicar</label>       
             </div>
          </div>
@@ -190,7 +190,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
     crossorigin="anonymous"></script>
-  <script src="js/contacto.js"></script>
+  <script type="module" src="js/admin.js"></script>
 </body>
 
 </html>
