@@ -11,7 +11,7 @@ window.agregarProducto = function(event){
     let codigo = document.getElementById('codigo').value;
     let nombre = document.getElementById('nombreProducto').value;
     let categoria = document.getElementById('categoria').value;
-    let destacar = document.getElementById('checkDestacar').value;
+    let destacar = document.getElementById('checkDestacar').vaue;
     let publicar = document.getElementById('checkPublicar').value;
 
     let nuevoProducto = new Producto (codigo, nombre, categoria, destacar, publicar);
