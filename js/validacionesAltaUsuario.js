@@ -187,7 +187,7 @@ window.crearNuevoUsuario= function (event){
 }
 
 function leerDatosLS(){
-    if(localStorage.length >0){
+    if(localStorage.getItem("listaUsuariosKey")){
         let _listaUsuarios= JSON.parse(localStorage.getItem("listaUsuariosKey")); //lista traida de local storage, pongo _ para diferenciar.
         if(listaUsuarios.length===0){
             listaUsuarios = _listaUsuarios

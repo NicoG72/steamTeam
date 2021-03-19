@@ -1,7 +1,20 @@
 import {Producto} from './productClass.js'
 
+
+//defino lista productos, contr
+let listaProductos=[];
+// function comprobarLista(){
+//     if(JSON.parse(localStorage.getItem('listaProductoKey'))){
+//         listaProductos=JSON.parse(localStorage.getItem('listaProductoKey'));
+//     }else{
+//     listaProductos=[];
+//     }
+// }
+// comprobarLista();
+
+leerProductoLS();
 //variable global este arreglo tendra todos los productos que guardo en mi local storage
-let listaProductos = [];
+
 const modalProducto = new bootstrap.Modal(document.getElementById('modalProducto'));
 
 let btnAgredar = document.getElementById('btnAgregar');
@@ -10,7 +23,7 @@ btnAgredar.addEventListener('click', function (){
     modalProducto.show();
 })
 
-leerProductoLS();
+
 
 window.agregarProducto = function(event){
     event.preventDefault();
@@ -44,10 +57,10 @@ function limpiarFormulario(){
 }
 
 function leerProductoLS(){
-    if(localStorage.length > 0){
+    if(localStorage.getItem('listaProductoKey')){
         let _listaProductoLS = JSON.parse(localStorage.getItem('listaProductoKey'));
         
-        if(listaProductos === 0){
+        if(listaProductos.length === 0){
             listaProductos = _listaProductoLS;
         }
         dibujarTabla(_listaProductoLS);
