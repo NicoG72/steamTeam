@@ -1,19 +1,9 @@
 import {Producto} from './productClass.js'
 
-
-//defino lista productos, contr
+//variable global este arreglo tendra todos los productos que guardo en mi local storage
 let listaProductos=[];
-// function comprobarLista(){
-//     if(JSON.parse(localStorage.getItem('listaProductoKey'))){
-//         listaProductos=JSON.parse(localStorage.getItem('listaProductoKey'));
-//     }else{
-//     listaProductos=[];
-//     }
-// }
-// comprobarLista();
 
 leerProductoLS();
-//variable global este arreglo tendra todos los productos que guardo en mi local storage
 
 const modalProducto = new bootstrap.Modal(document.getElementById('modalProducto'));
 
