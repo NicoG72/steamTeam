@@ -77,7 +77,7 @@ function dibujarTabla (Productos){
           <button><i class="far fa-trash-alt"></i></button>
           <button><i class="far fa-star"></i></button>
         </th>
-      </tr>`    };
+      </tr>`;
 
-    tproducto.innerHTML += filaProdc;
+    tproducto.innerHTML += filaProdc;}
 }
