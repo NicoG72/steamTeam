@@ -23,10 +23,12 @@ window.agregarProducto = function(event){
     let nombre = document.getElementById('nombreProducto').value;
     let categoria = document.getElementById('categoria').value;
     let descripcion = document.getElementById('descripcion').value;
+    let destacar = document.getElementById('checkDestacar').checked;
+    let publicado = document.getElementById('checkPublicar').checked;
 
 
 
-   let nuevoproducto = new Producto (codigo, nombre, categoria, descripcion)
+   let nuevoproducto = new Producto (codigo, nombre, categoria, descripcion,destacar,publicado)
    listaProductos.push(nuevoproducto); 
    console.log(listaProductos);
    localStorage.setItem('listaProductoKey', JSON.stringify(listaProductos));
@@ -72,6 +74,7 @@ function dibujarTabla (Productos){
         <th>${Productos[i].nombre}</th>
         <th>${Productos[i].categoria}</th>
         <th>${Productos[i].descripcion}</th>
+        <th>${Productos[i].checkPublicar}</th>
         <th>${Productos[i].checkDestacar}</th>
 
         
