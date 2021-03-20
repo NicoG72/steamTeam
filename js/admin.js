@@ -60,13 +60,14 @@ function leerProductoLS(){
 }
 
 function dibujarTabla (Productos){
-    console.log(Productos);
 
-    //traigo el cuerpo de la tabla el padra tbody
-    let tproducto = document.getElementById('tablaProductos');
-    let filaProdc = "";
+     //traigo el cuerpo de la tabla el padra tbody
+     let tproducto = document.getElementById('tablaProductos');
+     let filaProdc = "";
+ 
+     tproducto.innerHTML = "";
 
-    tproducto.innerHTML = "";
+   
 
     for(let i in Productos){
         filaProdc = `<tr>
@@ -85,4 +86,30 @@ function dibujarTabla (Productos){
       </tr>`;
 
     tproducto.innerHTML += filaProdc;}
+}
+
+function Publicar(){
+
+    let ckeckbox = document.getElementById('checkPublicar').checked;
+        
+    if(ckeckbox == true)
+    {
+       ckeckbox = "Publicado"
+    }else
+    {
+       ckeckbox = "No Publicado"
+    }
+  
+}
+
+function Destacar(){
+
+    let btnDestacar = document.getElementById('checkDestacar').checked;
+
+    if(btnDestacar == true){
+        btnDestacar= `<i class="fas fa-star"></i>`
+    }
+    else{
+        btnDestacar = `<button><i class="far fa-star"></i></button>`
+    }
 }
