@@ -16,6 +16,7 @@ btnAgredar.addEventListener('click', function (){
 
 
 window.agregarProducto = function(event){
+
     event.preventDefault();
     
 
@@ -80,7 +81,7 @@ function dibujarTabla (Productos){
 
         <th>
           <button><i class="far fa-edit"></i></button>
-          <button><i class="far fa-trash-alt"></i></button>
+          <button><i class="far fa-trash-alt" onclick="eliminarProductos(this)" id="${Productos[i].codigo}"></i></button>
           
         </th>
       </tr>`;
@@ -112,4 +113,31 @@ function Destacar(){
     else{
         btnDestacar = `<button><i class="far fa-star"></i></button>`
     }
+}
+
+//funcion eliminar producto
+
+window.eliminarProductos = function (boton){
+    Swal.fire({
+        title: '¿Está seguro que quiere eliminar el juego?',
+        text: "No puede volver atras luego de este paso",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#104452',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Eliminar',
+        cancelButtonText: 'Cancelar'
+      }).then((result) => {
+        if (result.isConfirmed) {
+            let productosFiltrados = listaProductos.filter(juego => juego.codigo != boton.id);
+            localStorage.setItem('listaProductoKey', JSON.stringify(productosFiltrados));
+            listaProductos = productosFiltrados;
+            leerProductoLS();
+          Swal.fire(
+            'Eliminado!',
+            'El juego se eliminó correctamente',
+            'success'
+          )
+        }
+      })
 }
