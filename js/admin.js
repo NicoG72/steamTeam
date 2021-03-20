@@ -75,13 +75,12 @@ function dibujarTabla (Productos){
         <th>${Productos[i].categoria}</th>
         <th>${Productos[i].descripcion}</th>
         <th>${Productos[i].checkPublicar}</th>
-        <th>${Productos[i].checkDestacar}</th>
+        <th><button><i class="far fa-star"></i></button></th>
 
-        
         <th>
           <button><i class="far fa-edit"></i></button>
           <button><i class="far fa-trash-alt"></i></button>
-          <button><i class="far fa-star"></i></button>
+          
         </th>
       </tr>`;
 
