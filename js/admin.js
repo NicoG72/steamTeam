@@ -76,7 +76,7 @@ function dibujarTabla (Productos){
         <th>${Productos[i].nombre}</th>
         <th>${Productos[i].categoria}</th>
         <th>${Productos[i].descripcion}</th>
-        <th>${Productos[i].checkPublicar}</th>
+        <th><input type="checkbox" ${Productos[i].publicado ? 'checked' : ''} onchange="publicarProducto('${Productos[i].codigo}')" id="checkPublicar" class="form-check-input"></th>
         <th><button><i class="far fa-star"></i></button></th>
 
         <th>
@@ -89,19 +89,21 @@ function dibujarTabla (Productos){
     tproducto.innerHTML += filaProdc;}
 }
 
-function Publicar(){
+window.publicarProducto = function (codigo){
 
-    let ckeckbox = document.getElementById('checkPublicar').checked;
-        
-    if(ckeckbox == true)
-    {
-       ckeckbox = "Publicado"
-    }else
-    {
-       ckeckbox = "No Publicado"
-    }
-  
+    let _listaProductoLS = JSON.parse(localStorage.getItem('listaProductoKey'));
+    
+    for(let i in _listaProductoLS){
+        if(_listaProductoLS[i].codigo === codigo){
+          _listaProductoLS[i].publicado = !_listaProductoLS[i].publicado;
+            
+        }
+       
+      }
+    
+      localStorage.setItem('listaProductoKey', JSON.stringify(_listaProductoLS));
 }
+
 
 function Destacar(){
 
