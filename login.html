@@ -83,10 +83,10 @@
                 </div>
               </div>
               <button class="btn colorBase text-light border-light" type="submit">Login</button>
-              <a id="linkRegistro" class="small" data-bs-toggle="modal" data-bs-target="#modalUsuario">
-                Registrarme</a>
-              <!-- <button class="btn btn-success text-light border-light" type="button" data-bs-toggle="modal"
-                data-bs-target="#modalUsuario"> Registrese</button> -->
+
+              <button class="btn btn-success text-light border-light" type="button" data-bs-toggle="modal"
+                data-bs-target="#modalUsuario"> <a id="linkRegistro" class="small">
+                  Registrarme</a></button>
             </form>
           </div>
         </section>
@@ -113,64 +113,68 @@
     </div>
   </main>
   <!-- Modal de registro de usuarios -->
- <div class="modal fade" id="modalUsuario" tabindex="-1" aria-labelledby="modalUsuarioLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content bg-dark text-light">
-      <div class="modal-header">
-        <h5 class="modal-title" id="modalUsuarioLabel">Nuevo Usuario</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form id="formUsuario" onsubmit="crearNuevoUsuario(event)">
-          <div class="mb-3">
-            <label class="form-label">Email*</label>
-            <input type="email" class="form-control" id="emailUsuario" placeholder="juan123@gmail.com" onblur="validarEmail(this)" required>
-            <div id="feedbackEmail" class="invalid-feedback">Debe ingresar una direccion de email valido.</div>
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Nombre de usuario*</label>
-            <input type="text" class="form-control" id="nombreUsuario" placeholder="Juan123" onblur="validarNombreUsuario(this)" required>
-            <div id="feedbackUsuario" class="invalid-feedback">Debe ingresar un nombre de usuario valido</div>
-          </div>
-          <div class="mb-3">
-            <label type="text" class="form-label">Password*</label>
-            <input type="password" class="form-control" id="passUsuario" placeholder="juan123" onblur="validarPassword(this)" required>
-            <div class="invalid-feedback">Debe ingresar un password valido.</div>
-          </div>
-           <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="info">
-            <label class="form-check-label" for="exampleCheck1">Deseo recibir notificaciones sobre novedades en mi email.</label>
-          </div>
-          <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="terminos" required>
-            <label class="form-check-label" for="exampleCheck1">Acepto terminos y condiciones*</label>
-            <div class="invalid-feedback">Debe aceptar los terminos y condiciones.</div>
-          </div>
-          <button type="submit" class="btn btn-primary">Registrarse</button>
-        </form>
+  <div class="modal fade" id="modalUsuario" tabindex="-1" aria-labelledby="modalUsuarioLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content bg-dark text-light">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalUsuarioLabel">Nuevo Usuario</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="formUsuario" onsubmit="crearNuevoUsuario(event)">
+            <div class="mb-3">
+              <label class="form-label">Email*</label>
+              <input type="email" class="form-control" id="emailUsuario" placeholder="juan123@gmail.com"
+                onblur="validarEmail(this)" required>
+              <div id="feedbackEmail" class="invalid-feedback">Debe ingresar una direccion de email valido.</div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Nombre de usuario*</label>
+              <input type="text" class="form-control" id="nombreUsuario" placeholder="Juan123"
+                onblur="validarNombreUsuario(this)" required>
+              <div id="feedbackUsuario" class="invalid-feedback">Debe ingresar un nombre de usuario valido</div>
+            </div>
+            <div class="mb-3">
+              <label type="text" class="form-label">Password*</label>
+              <input type="password" class="form-control" id="passUsuario" placeholder="juan123"
+                onblur="validarPassword(this)" required>
+              <div class="invalid-feedback">Debe ingresar un password valido.</div>
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="info">
+              <label class="form-check-label" for="exampleCheck1">Deseo recibir notificaciones sobre novedades en mi
+                email.</label>
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="terminos" required>
+              <label class="form-check-label" for="exampleCheck1">Acepto terminos y condiciones*</label>
+              <div class="invalid-feedback">Debe aceptar los terminos y condiciones.</div>
+            </div>
+            <button type="submit" class="btn btn-primary">Registrarse</button>
+          </form>
+        </div>
       </div>
     </div>
-  </div>  
-</div>
+  </div>
   <!-- Modal Terminos y Condiciones-->
   <div class="modal fade" id="modalTerminos" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content border-light">
-        <div class="modal-header bg-danger container-fluid">
-          <h5 class="modal-title" id="staticBackdropLabel">Terminos y Condiciones</h5>
-        </div>
-        <div class="modal-body container-fluid bg-light text-dark">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis enim aliquam tempore quam in voluptatem
-            itaque expedita eaque? Rem laborum ut quas, sit molestiae nisi blanditiis tempore voluptate at magnam cum
-            asperiores quidem reprehenderit error eveniet quae ex consequatur? Est natus beatae error reprehenderit ab
-            adipisci odio nulla quaerat labore?</p>
-        </div>
-        <div class="modal-footer bg-light container-fluid d-flex justify-content-center">
-          <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Entendido</button>
-        </div>
+        <div class="modal-header bg-danger container-fluid"></div>
+        <h5 class="modal-title" id="staticBackdropLabel">Terminos y Condiciones</h5>
+      </div>
+      <div class="modal-body container-fluid bg-light text-dark">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis enim aliquam tempore quam in voluptatem
+          itaque expedita eaque? Rem laborum ut quas, sit molestiae nisi blanditiis tempore voluptate at magnam cum
+          asperiores quidem reprehenderit error eveniet quae ex consequatur? Est natus beatae error reprehenderit ab
+          adipisci odio nulla quaerat labore?</p>
+      </div>
+      <div class="modal-footer bg-light container-fluid d-flex justify-content-center">
+        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Entendido</button>
       </div>
     </div>
+  </div>
   </div>
   <footer class=" container-fluid bg-dark text-light mb-0 py-2">
     <div class="row my-1">

@@ -7,7 +7,6 @@ let listaUsuarios = [];
 const modalUsuario = new bootstrap.Modal(document.getElementById("modalUsuario"));
 leerDatosLS();
 
-
 //llamo a la funcion limpiar formulario desde el link de registro
 let linkRegistro = document.getElementById("linkRegistro");
 linkRegistro.addEventListener("click", function(){
@@ -41,30 +40,6 @@ window.validarEmail = function(email){
         usuario.className= "form-control is-invalid"
         return false;
   }};
-//  document.getElementById("feedbackEmail").innerHTML ="El email utilizado ya esta registrado.";
-
-//falta verificar que el usuario no exista, verificar con arreglo de localStorage
-// window.validarNombreUsuario = function (usuario){
-//     console.log("desde la funcion validar usuario");
-//     let nombreUsuario = document.getElementById("nombreUsuario").value;
-//     leerDatosLS();
-//     for(let i in listaUsuarios){
-//         if(listaUsuarios[i].usuario != nombreUsuario){
-//             console.log("usuario unico");
-//             usuario.className="form-control is-valid";
-//           return true;
-//       }else if(listaUsuarios[i].usuario === nombreUsuario){
-//           console.log("usuario existente")
-//         usuario.className="form-control is-invalid";
-//         document.getElementById("feedbackUsuario").innerHTML ="El nombre de usuario utilizado ya existe.";
-//         return false;
-//     }else if(usuario.value.trim()===""){
-//         console.log("ingrese un usuario valido")
-//         usuario.className="form-control is-invalid";
-//         return false;
-//     } 
-// }};
-
 //valido contraseña
 window.validarPassword = function (pass){
     console.log(pass);
@@ -79,75 +54,6 @@ window.validarPassword = function (pass){
     }
 }
 
-// function usuarioUnico(){
-    
-//     let usuario = document.getElementById("nombreUsuario").value;
-//     let email = document.getElementById("emailUsuario").value;
-//     for(let i in listaUsuarios){
-
-//         if(listaUsuarios[i].usuario != usuario && listaUsuarios[i].email != email){
-//             console.log("usuario unico");
-//             document.getElementById("nombreUsuario").className="form-control is-valid";
-//             document.getElementById("emailUsuario").className="form-control is-valid";
-//             return true;
-            
-//         }else if(listaUsuarios[i].email === email){
-//             console.log("email existente");
-//             document.getElementById("feedbackEmail").innerHTML ="El email utilizado ya esta registrado.";
-//             document.getElementById("emailUsuario").className="form-control is-invalid";  
-//             return false;
-//         }else if(listaUsuarios[i].usuario === usuario){
-//             console.log("usuario existente");
-//             document.getElementById("feedbackUsuario").innerHTML ="El usuario utilizado ya esta registrado.";
-//             document.getElementById("nombreUsuario").className="form-control is-invalid";  
-//             return false;
-//         } 
-    
-// }
-// }
-
-// function usuarioUnico(){
-    
-//     let usuario = document.getElementById("nombreUsuario").value;
-    
-//     for(let i in listaUsuarios){
-//         leerDatosLS();
-//         if(listaUsuarios[i].usuario != usuario){
-//             console.log("usuario unico");
-//             document.getElementById("nombreUsuario").className="form-control is-valid";
-//             return true;
-            
-//         }else if(listaUsuarios[i].usuario === usuario){
-//             console.log("usuario existente");
-//             document.getElementById("feedbackUsuario").innerHTML ="El usuario utilizado ya esta registrado.";
-//             document.getElementById("nombreUsuario").className="form-control is-invalid";  
-//             return false;
-//         } 
-    
-// }
-// }
-// function emailUnico(){
-    
-//     let email = document.getElementById("emailUsuario").value;
-//     for(let i in listaUsuarios){
-//         leerDatosLS();
-//         if(listaUsuarios[i].email != email){
-//             console.log("usuario unico");
-//             document.getElementById("emailUsuario").className="form-control is-valid";
-//             return true;
-            
-//         }else if(listaUsuarios[i].email === email){
-//             console.log("email existente");
-//             document.getElementById("feedbackEmail").innerHTML ="El email utilizado ya esta registrado.";
-//             document.getElementById("emailUsuario").className="form-control is-invalid";  
-//             return false;
-//         }
-    
-// }
-// }
-
-
-//creo la funcion validar general el nuevo usuasrio
 function validarNuevoUsuario(){
 
     if(validarEmail(document.getElementById("emailUsuario"))===true && validarNombreUsuario(document.getElementById("nombreUsuario"))===true && validarPassword(document.getElementById("passUsuario"))===true){
@@ -160,6 +66,7 @@ return false;}
 //creo nuevo usuario una vez validado correctamente todos los campos y almaceno en LS
 window.crearNuevoUsuario= function (event){
     event.preventDefault();
+    leerDatosLS();
     if(validarNuevoUsuario(document.getElementById("formUsuario")) === true){
 
         let email = document.getElementById("emailUsuario").value;
@@ -168,6 +75,18 @@ window.crearNuevoUsuario= function (event){
 
         let nuevoUsuario = new Usuario (email, nombreUsuario, password);
         console.log("nuevo usuario");
+
+        const emailCargado = listaUsuarios.find((usuario)=>usuario.email===nuevoUsuario.email );
+        const usuarioCargado = listaUsuarios.find((usuario)=> usuario.usuario=== nuevoUsuario.usuario);
+
+      if (emailCargado) {
+        return document.getElementById('emailUsuario').className = 'form-control is-invalid',
+     document.getElementById('feedbackEmail').innerHTML= 'El Email ingresado ya se encuentra en uso, Por favor ingresa uno nuevo';
+      }
+      if(usuarioCargado){
+     return document.getElementById('nombreUsuario').className = 'form-control is-invalid',
+     document.getElementById('feedbackUsuario').innerHTML= 'El Usuario ingresado ya se encuentra en uso, Por favor ingresa uno nuevo';
+      }
 
         listaUsuarios.push(nuevoUsuario);
         console.log(listaUsuarios);

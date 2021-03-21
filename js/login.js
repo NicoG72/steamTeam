@@ -31,8 +31,7 @@ window.validacionLogin= function (event){
       document.getElementById("navAdmin").className = "nav-item ";
 
       location.href="admin.html";
-      
-
+  
       // habilitar en el nav el link "admin"
 
       //habilitar span de user
