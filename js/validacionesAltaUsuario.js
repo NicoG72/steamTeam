@@ -7,7 +7,6 @@ let listaUsuarios = [];
 const modalUsuario = new bootstrap.Modal(document.getElementById("modalUsuario"));
 leerDatosLS();
 
-
 //llamo a la funcion limpiar formulario desde el link de registro
 let linkRegistro = document.getElementById("linkRegistro");
 linkRegistro.addEventListener("click", function(){
@@ -54,6 +53,7 @@ window.validarPassword = function (pass){
         return false;
     }
 }
+
 function validarNuevoUsuario(){
 
     if(validarEmail(document.getElementById("emailUsuario"))===true && validarNombreUsuario(document.getElementById("nombreUsuario"))===true && validarPassword(document.getElementById("passUsuario"))===true){
@@ -76,10 +76,16 @@ window.crearNuevoUsuario= function (event){
         let nuevoUsuario = new Usuario (email, nombreUsuario, password);
         console.log("nuevo usuario");
 
-        const datosCargados = listaUsuarios.find((usuario)=>usuario.email===nuevoUsuario.email || usuario.usuario=== nuevoUsuario.usuario);
+        const emailCargado = listaUsuarios.find((usuario)=>usuario.email===nuevoUsuario.email );
+        const usuarioCargado = listaUsuarios.find((usuario)=> usuario.usuario=== nuevoUsuario.usuario);
 
-      if (datosCargados) {
-        return alert('Datos en uso');
+      if (emailCargado) {
+        return document.getElementById('emailUsuario').className = 'form-control is-invalid',
+     document.getElementById('feedbackEmail').innerHTML= 'El Email ingresado ya se encuentra en uso, Por favor ingresa uno nuevo';
+      }
+      if(usuarioCargado){
+     return document.getElementById('nombreUsuario').className = 'form-control is-invalid',
+     document.getElementById('feedbackUsuario').innerHTML= 'El Usuario ingresado ya se encuentra en uso, Por favor ingresa uno nuevo';
       }
 
         listaUsuarios.push(nuevoUsuario);
