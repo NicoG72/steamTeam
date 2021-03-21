@@ -16,6 +16,7 @@ btnAgredar.addEventListener('click', function (){
 
 
 window.agregarProducto = function(event){
+
     event.preventDefault();
     
 
@@ -23,10 +24,12 @@ window.agregarProducto = function(event){
     let nombre = document.getElementById('nombreProducto').value;
     let categoria = document.getElementById('categoria').value;
     let descripcion = document.getElementById('descripcion').value;
+    let destacar = document.getElementById('checkDestacar').checked;
+    let publicado = document.getElementById('checkPublicar').checked;
 
 
 
-   let nuevoproducto = new Producto (codigo, nombre, categoria, descripcion)
+   let nuevoproducto = new Producto (codigo, nombre, categoria, descripcion,destacar,publicado)
    listaProductos.push(nuevoproducto); 
    console.log(listaProductos);
    localStorage.setItem('listaProductoKey', JSON.stringify(listaProductos));
@@ -58,13 +61,14 @@ function leerProductoLS(){
 }
 
 function dibujarTabla (Productos){
-    console.log(Productos);
 
-    //traigo el cuerpo de la tabla el padra tbody
-    let tproducto = document.getElementById('tablaProductos');
-    let filaProdc = "";
+     //traigo el cuerpo de la tabla el padra tbody
+     let tproducto = document.getElementById('tablaProductos');
+     let filaProdc = "";
+ 
+     tproducto.innerHTML = "";
 
-    tproducto.innerHTML = "";
+   
 
     for(let i in Productos){
         filaProdc = `<tr>
@@ -72,15 +76,68 @@ function dibujarTabla (Productos){
         <th>${Productos[i].nombre}</th>
         <th>${Productos[i].categoria}</th>
         <th>${Productos[i].descripcion}</th>
-        <th>${Productos[i].checkDestacar}</th>
+        <th>${Productos[i].checkPublicar}</th>
+        <th><button><i class="far fa-star"></i></button></th>
 
-        
         <th>
           <button><i class="far fa-edit"></i></button>
-          <button><i class="far fa-trash-alt"></i></button>
-          <button><i class="far fa-star"></i></button>
+          <button><i class="far fa-trash-alt" onclick="eliminarProductos(this)" id="${Productos[i].codigo}"></i></button>
+          
         </th>
       </tr>`;
 
     tproducto.innerHTML += filaProdc;}
+}
+
+function Publicar(){
+
+    let ckeckbox = document.getElementById('checkPublicar').checked;
+        
+    if(ckeckbox == true)
+    {
+       ckeckbox = "Publicado"
+    }else
+    {
+       ckeckbox = "No Publicado"
+    }
+  
+}
+
+function Destacar(){
+
+    let btnDestacar = document.getElementById('checkDestacar').checked;
+
+    if(btnDestacar == true){
+        btnDestacar= `<i class="fas fa-star"></i>`
+    }
+    else{
+        btnDestacar = `<button><i class="far fa-star"></i></button>`
+    }
+}
+
+//funcion eliminar producto
+
+window.eliminarProductos = function (boton){
+    Swal.fire({
+        title: '¿Está seguro que quiere eliminar el juego?',
+        text: "No puede volver atras luego de este paso",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#104452',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Eliminar',
+        cancelButtonText: 'Cancelar'
+      }).then((result) => {
+        if (result.isConfirmed) {
+            let productosFiltrados = listaProductos.filter(juego => juego.codigo != boton.id);
+            localStorage.setItem('listaProductoKey', JSON.stringify(productosFiltrados));
+            listaProductos = productosFiltrados;
+            leerProductoLS();
+          Swal.fire(
+            'Eliminado!',
+            'El juego se eliminó correctamente',
+            'success'
+          )
+        }
+      })
 }

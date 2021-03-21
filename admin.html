@@ -70,11 +70,12 @@
           <table class="table table-dark table-striped">
             <thead>
               <tr>
-                <th scope="col">#</th>
+                <th scope="col">codigo</th>
                 <th scope="col">Nombre</th>
                 <th scope="col">Categoria</th>
                 <th scope="col">Descripcion</th>
                 <th scope="col">Publicado</th>
+                <th scope="col">Destacado</th>
                 <th scope="col">Opciones</th>
               </tr>
             </thead>
@@ -85,10 +86,11 @@
                 <th>EA Sport</th>
                 <th>Futbol</th>
                 <th>no publicado</th>
+                <th><button><i class="far fa-star"></i></button></th>
                 <th>
                   <button><i class="far fa-edit"></i></button>
                   <button><i class="far fa-trash-alt"></i></button>
-                  <button><i class="far fa-star"></i></button>
+                
                 </th>
               </tr>
               <tr>
@@ -97,10 +99,10 @@
                 <th>Nintendo</th>
                 <th>No publicado</th>
                 <th>no publicado</th>
+                <th><button><i class="far fa-star"></i></button></th>
                 <th>
                   <button><i class="far fa-edit"></i></button>
                   <button><i class="far fa-trash-alt"></i></button>
-                  <button><i class="far fa-star"></i></button>
                 </th>
               </tr>
             </tbody>
@@ -138,14 +140,15 @@
             </div>
       <div class="mb-3">
               <div class="form-check">
-                  <input type="checkbox" id="checkDestacar" class="form-check-input">
-                  <label class="form-check-label">Destacar Juego</label>       
+                <input type="checkbox" id="checkPublicar" class="form-check-input">
+                <label class="form-check-label">Publicar</label>  
+                         
               </div>
            </div>
            <div class="mb-3">
             <div class="form-check">
-                <input type="checkbox" id="checkPublicar" class="form-check-input">
-                <label class="form-check-label">Publicar</label>       
+              <input type="checkbox" id="checkDestacar" class="form-check-input">
+              <label class="form-check-label">Destacar Juego</label>
             </div>
          </div>
             <button class="btn btn-primary" type="submit">Guardar</button>
