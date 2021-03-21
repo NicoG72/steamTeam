@@ -3,35 +3,36 @@ import {Producto} from './productClass.js'
 //variable global este arreglo tendra todos los productos que guardo en mi local storage
 let listaProductos=[];
 
-leerProductoLS();
-
 const modalProducto = new bootstrap.Modal(document.getElementById('modalProducto'));
 
+let modificarProducto = false;
+let destacarProducto = false;
 let btnAgredar = document.getElementById('btnAgregar');
 btnAgredar.addEventListener('click', function (){
     limpiarFormulario();
     modalProducto.show();
 })
 
-
+leerProductoLS();
 
 window.agregarProducto = function(event){
 
-    event.preventDefault();
+    //event.preventDefault();
     
 
     let codigo = document.getElementById('codigo').value;
-    let nombre = document.getElementById('nombreProducto').value;
+    let nombre = document.getElementById('nombre').value;
     let categoria = document.getElementById('categoria').value;
     let descripcion = document.getElementById('descripcion').value;
-    let destacar = document.getElementById('checkDestacar').checked;
-    let publicado = document.getElementById('checkPublicar').checked;
+    let publicado = document.getElementById('publicar').checked;
+    let destacar = document.getElementById('destacar').checked;
+    
+   let nuevoproducto = new Producto (codigo, nombre, categoria, descripcion,publicado,destacar)
 
-
-
-   let nuevoproducto = new Producto (codigo, nombre, categoria, descripcion,destacar,publicado)
    listaProductos.push(nuevoproducto); 
+
    console.log(listaProductos);
+
    localStorage.setItem('listaProductoKey', JSON.stringify(listaProductos));
     limpiarFormulario();
 
@@ -47,10 +48,11 @@ window.agregarProducto = function(event){
 
 function limpiarFormulario(){
     document.getElementById('formProducto').reset();
+    modificarProducto = false;
 }
 
 function leerProductoLS(){
-    if(localStorage.getItem('listaProductoKey')){
+    if(localStorage.length > 0){
         let _listaProductoLS = JSON.parse(localStorage.getItem('listaProductoKey'));
         
         if(listaProductos.length === 0){
@@ -76,11 +78,11 @@ function dibujarTabla (Productos){
         <th>${Productos[i].nombre}</th>
         <th>${Productos[i].categoria}</th>
         <th>${Productos[i].descripcion}</th>
-        <th><input type="checkbox" ${Productos[i].publicado ? 'checked' : ''} onchange="publicarProducto('${Productos[i].codigo}')" id="checkPublicar" class="form-check-input"></th>
-        <th><button><i class="far fa-star"></i></button></th>
+        <th><input type="checkbox" ${Productos[i].publicado ? 'checked' : ''} onchange="publicarProducto('${Productos[i].codigo}')" id="publicar" class="form-check-input"></th>
+        <th><button><i class="fas fa-star" onclick="destacarProducto(this)"id="${Productos[i].codigo}"></i></button></th>
 
         <th>
-          <button><i class="far fa-edit"></i></button>
+          <button><i class="far fa-edit" onclick="prepararProducto(this)" id="${Productos[i].codigo}"></i></button>
           <button><i class="far fa-trash-alt" onclick="eliminarProductos(this)" id="${Productos[i].codigo}"></i></button>
           
         </th>
@@ -102,23 +104,29 @@ window.publicarProducto = function (codigo){
       }
     
       localStorage.setItem('listaProductoKey', JSON.stringify(_listaProductoLS));
+      Swal.fire(
+        'Producto Publicado',
+        'El Producto se publico correctamente',
+        'success'
+      )
+}
+
+window.destacarProducto = function (boton){
+  console.log("id del boton" + boton.id);
+  let destacar = listaProductos.find(producto => producto.codigo === boton.id);
+  console.log(destacar);
+
+
+  let _listaProductoLS = JSON.parse(localStorage.getItem('listaProductoKey'));
+    
+    
+
+
 }
 
 
-function Destacar(){
 
-    let btnDestacar = document.getElementById('checkDestacar').checked;
-
-    if(btnDestacar == true){
-        btnDestacar= `<i class="fas fa-star"></i>`
-    }
-    else{
-        btnDestacar = `<button><i class="far fa-star"></i></button>`
-    }
-}
-
-//funcion eliminar producto
-
+//funcion eliminar producto 
 window.eliminarProductos = function (boton){
     Swal.fire({
         title: '¿Está seguro que quiere eliminar el juego?',
@@ -143,3 +151,73 @@ window.eliminarProductos = function (boton){
         }
       })
 }
+
+
+window.prepararProducto = function (boton){
+
+  //obtengo codigo del producto a destacar
+  console.log(boton.id);
+
+  let productoEncontrado = listaProductos.find(producto => producto.codigo === boton.id);
+  console.log(productoEncontrado);
+
+  //traigo los datos y cargo el modal
+  document.getElementById('codigo').value = productoEncontrado.codigo;
+  document.getElementById('nombre').value = productoEncontrado.nombre;
+  document.getElementById('categoria').value= productoEncontrado.categoria;
+  document.getElementById('descripcion').value = productoEncontrado.descripcion;
+  document.getElementById('publicar').checked = productoEncontrado.publicar;
+  document.getElementById('destacar').checked = productoEncontrado.destacar;
+ 
+  modificarProducto = true;
+
+  modalProducto.show();
+
+}
+
+window.guardarProducto = function(event){
+  event.preventDefault();
+  console.log("decir que funcion se va a ejecutar");
+
+  if(modificarProducto){
+    agregarProducto();
+  }else{
+    editarProducto();
+    
+  }
+}
+
+function editarProducto(){
+
+  console.log('desde la funcion editar funkopop');
+
+  let codigo = document.getElementById('codigo').value;
+  let nombre = document.getElementById('nombreProducto').value;
+  let categoria = document.getElementById('categoria').value;
+  let descripcion = document.getElementById('descripcion').value;
+  let destacar = document.getElementById('checkDestacar').checked;
+  let publicar = document.getElementById('checkPublicar').checked;
+
+  limpiarFormulario();
+  for(let i in listaProductos){
+    if(listaProductos[i].codigo === codigo){
+      listaProductos[i].nombre = nombre;
+      listaProductos[i].categoria = categoria;
+      listaProductos[i].descripcion = descripcion;
+      listaProductos[i].destacar = destacar;
+      listaProductos[i].publicar = publicar;
+    }
+  }
+
+  localStorage.setItem('listaProductoKey', JSON.stringify(listaProductos));
+  leerProductoLS();
+
+  Swal.fire(
+    'Producto modificado',
+    'El video juego se actualizo correctamente',
+    'success'
+  )
+  // cerrar ventana modal
+  modalProducto.hide();
+}
+
