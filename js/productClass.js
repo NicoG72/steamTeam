@@ -1,9 +1,12 @@
 export class Producto {
-    constructor (codigo,nombre,categoria,publicado,destacado){
+    constructor (codigo,nombre,categoria,descripcion,publicado,destacar){
     this.codigo = codigo;
     this.nombre = nombre;
-    this.categoria= categoria;
-    this.publicado=publicado;
-    this.destacado=destacado;
+    this.categoria = categoria;
+    this.descripcion = descripcion;
+    this.publicado = publicado;
+    this.destacar = destacar;
+  
+   
 }
 }

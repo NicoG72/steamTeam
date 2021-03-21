@@ -1,4 +1,10 @@
-function validarUsuario(input){
+import { Usuario } from "./clases.js";
+
+//creo usuario admin
+let usuarioAdmin = new Usuario("proyectsteam@gmail.com", "admin", "admin123");
+console.log(usuarioAdmin);
+
+window.validarUsuario =function (input){
     if (input.value.trim() === "") {
     input.className = "form-control is-invalid";
     return false;
@@ -7,7 +13,7 @@ function validarUsuario(input){
     return true;
   }
 }
-function validarPassword(pass){
+window.validarPassword=function (pass){
   if (pass.value.trim() != "" && pass.value.length >= 6) {
     pass.className = "form-control is-valid";
     return true;
@@ -16,13 +22,16 @@ function validarPassword(pass){
     return false;
   }
 }
-function validacionLogin(event){
+window.validacionLogin= function (event){
   event.preventDefault();
   if (    validarUsuario(document.getElementById('usuario')) &&
-    validarPassword(document.getElementById('password')) 
+    validarPassword(document.getElementById('password')) &&
+    document.getElementById("usuario").value === usuarioAdmin.usuario && document.getElementById("password").value === usuarioAdmin.password
     ){
-      //validar que el usuario sea admin
+      document.getElementById("navAdmin").className = "nav-item ";
 
+      location.href="admin.html";
+  
       // habilitar en el nav el link "admin"
 
       //habilitar span de user
@@ -30,7 +39,8 @@ function validacionLogin(event){
       //ingresar como user admin
 
   }else{
-    //ingresar como user comun 
+    console.log("") 
     
   }
 }
+
