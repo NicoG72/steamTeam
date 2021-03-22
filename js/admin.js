@@ -28,7 +28,7 @@ window.agregarProducto = function(event){
     let destacar = document.getElementById('destacar').checked;
     
    let nuevoproducto = new Producto (codigo, nombre, categoria, descripcion,publicado,destacar)
-
+    console.log(nuevoproducto);
    listaProductos.push(nuevoproducto); 
 
    console.log(listaProductos);
