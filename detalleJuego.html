@@ -57,10 +57,16 @@
             </ul>
             <form class="d-flex">
               <ul class="navbar-nav me-2">
-                <li class="nav-item">
-                  <a class="nav-link" href="login.html">Login</a>
+                <li class="nav-item" id="navLogin">
+                  <a class="nav-link" id="login" href="login.html">Login</a>
                 </li>
-                <li class="nav-item d-none">
+                <li class="nav-item d-none" id="cerrarSesion">
+                <button type="button" class="btn d-none" id="cerrarS" onclick="cerrarSesion()">Cerrar Sesion</button>
+                </li>
+                <li class="nav-item d-none" id="user">
+                  <a class="nav-link" id="nombreUser"></a>
+                </li>
+                <li class="nav-item d-none" id="navAdmin">
                   <a class="nav-link" href="admin.html">Admin</a>
                 </li>
               </ul>
@@ -157,6 +163,6 @@
       integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
       crossorigin="anonymous"
     ></script>
-    <script src="js/contacto.js"></script>
+    <script type="module" src="js/usuarioLogueado.js"></script>
   </body>
 </html>
