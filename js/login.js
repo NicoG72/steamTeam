@@ -1,10 +1,6 @@
-import { Usuario } from "./clases.js";
-import{listaUsuarios} from "./validacionesAltaUsuario.js"
-// import{cargarUsuario} from "./usuarioLogueado"
 
-//creo usuario admin
-let usuarioAdmin = new Usuario("proyectsteam@gmail.com", "admin", "admin123");
-console.log(usuarioAdmin);
+import{listaUsuarios} from "./validacionesAltaUsuario.js"
+
 
 window.validarUsuario =function (input){
     if (input.value.trim() === "") {
@@ -31,7 +27,6 @@ window.validacionLogin= function (event){
   
   if (validarUsuario(document.getElementById('usuario'))===true &&
     validarPassword(document.getElementById('password'))===true
-    // document.getElementById("usuario").value === usuarioAdmin.usuario && document.getElementById("password").value === usuarioAdmin.password
     ){
       let usuarioLogueado = listaUsuarios.find((usuario)=>usuario.usuario ===document.getElementById("usuario").value  && usuario.password===document.getElementById("password").value);
       if(usuarioLogueado && document.getElementById("usuario").value ==="admin"){
@@ -44,20 +39,13 @@ window.validacionLogin= function (event){
         location.href="index.html"
         console.log("logueando usuario");
       }
-      
     }
     
   }
-
   
-//  export function cerrarSesion(){
-//   localStorage.removeItem("usuariologueado");
-//   location.href="index.html"
-//   document.getElementById("navLogin").className="nav-item";
-//   document.getElementById("cerrarSesion").className="nav-item d-none";
-//   document.getElementById("user").className="nav-item d-none"
-//   console.log("sesion cerrada");
-// }
+  
+
+
 
 
 

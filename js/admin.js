@@ -87,7 +87,15 @@ function dibujarTabla (Productos){
 }
 
 // window.cerrarSesion=function(){
-//     localStorage.removeItem("usuarioLogueadoKey");
- // }
+// localStorage.removeItem("usuarioLogueadoKey");
+//  }
+
 // let sesion = document.getElementById("cerrarS");
-// sesion.addEventListener("click", function(){cerrarSesion()});
+//  sesion.addEventListener("click",function(){cerrarSesion(this)});
+
+
+// window.cerrarSesion=function(){
+//     localStorage.removeItem("usuariologueado");
+//     document.getElementById("navLogin").className="nav-item";
+//     document.getElementById("cerrarSesion").className="nav-item d-none";
+// }
