@@ -1,4 +1,6 @@
 import { Usuario } from "./clases.js";
+import{listaUsuarios} from "./validacionesAltaUsuario.js"
+// import{cargarUsuario} from "./usuarioLogueado"
 
 //creo usuario admin
 let usuarioAdmin = new Usuario("proyectsteam@gmail.com", "admin", "admin123");
@@ -22,26 +24,56 @@ window.validarPassword=function (pass){
     return false;
   }
 }
+
+
 window.validacionLogin= function (event){
   event.preventDefault();
-  if (    validarUsuario(document.getElementById('usuario')) &&
-    validarPassword(document.getElementById('password')) &&
-    document.getElementById("usuario").value === usuarioAdmin.usuario && document.getElementById("password").value === usuarioAdmin.password
+  
+  if (validarUsuario(document.getElementById('usuario'))===true &&
+    validarPassword(document.getElementById('password'))===true
+    // document.getElementById("usuario").value === usuarioAdmin.usuario && document.getElementById("password").value === usuarioAdmin.password
     ){
-      document.getElementById("navAdmin").className = "nav-item ";
+      let usuarioLogueado = listaUsuarios.find((usuario)=>usuario.usuario ===document.getElementById("usuario").value  && usuario.password===document.getElementById("password").value);
+      if(usuarioLogueado && document.getElementById("usuario").value ==="admin"){
+        localStorage.setItem("usuariologueado", JSON.stringify(document.getElementById("usuario").value));
+        location.href="admin.html"
+  console.log("logueando admin");
 
-      location.href="admin.html";
+       }else if(usuarioLogueado && document.getElementById("usuario").value !="admin"){
+        localStorage.setItem("usuariologueado", JSON.stringify(document.getElementById("usuario").value));
+        location.href="index.html"
+        console.log("logueando usuario");
+      }
       
-
-      // habilitar en el nav el link "admin"
-
-      //habilitar span de user
-
-      //ingresar como user admin
-
-  }else{
-    console.log("") 
+    }
     
   }
-}
+
+  
+//  export function cerrarSesion(){
+//   localStorage.removeItem("usuariologueado");
+//   location.href="index.html"
+//   document.getElementById("navLogin").className="nav-item";
+//   document.getElementById("cerrarSesion").className="nav-item d-none";
+//   document.getElementById("user").className="nav-item d-none"
+//   console.log("sesion cerrada");
+// }
+
+
+
+
+
+  // }else if(validarUsuario(document.getElementById('usuario'))===true && validarPassword(document.getElementById('password'))===true && controlUsuarios()===true 
+  // ){
+  //   document.getElementById("navUsuario").className = "nav-item";
+
+  //   // location.href="admin.html";
+    
+  // }else if(document.getElementById("password").value != usuarioAdmin.password){
+  //   console.log("password incorrecto");
+  //   document.getElementById("password").className="form-control is-invalid"
+  //   document.getElementById("feedbackPassword").innerHTML = "password incorrecto"
+  // }
+    
+ 
 

@@ -1,4 +1,5 @@
 import {Producto} from './productClass.js'
+// import {cerrarSesion} from './login.js'
 
 //variable global este arreglo tendra todos los productos que guardo en mi local storage
 let listaProductos=[];
@@ -84,3 +85,9 @@ function dibujarTabla (Productos){
 
     tproducto.innerHTML += filaProdc;}
 }
+
+// window.cerrarSesion=function(){
+//     localStorage.removeItem("usuarioLogueadoKey");
+ // }
+// let sesion = document.getElementById("cerrarS");
+// sesion.addEventListener("click", function(){cerrarSesion()});
