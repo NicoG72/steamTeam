@@ -5,6 +5,11 @@ let listaProductos=[];
 
 const modalProducto = new bootstrap.Modal(document.getElementById('modalProducto'));
 
+//variable booliana para guardar o agregar 
+// modificarProducto = false en este caso agrego un nuevo producto
+//moificarProducto = true modifico un producto
+
+
 let modificarProducto = false;
 let destacarProducto = false;
 let btnAgredar = document.getElementById('btnAgregar');
@@ -15,11 +20,9 @@ btnAgredar.addEventListener('click', function (){
 
 leerProductoLS();
 
-window.agregarProducto = function(event){
+function agregarProducto (){
 
     //event.preventDefault();
-    
-
     let codigo = document.getElementById('codigo').value;
     let nombre = document.getElementById('nombre').value;
     let categoria = document.getElementById('categoria').value;
@@ -180,44 +183,42 @@ window.guardarProducto = function(event){
   console.log("decir que funcion se va a ejecutar");
 
   if(modificarProducto){
-    agregarProducto();
-  }else{
     editarProducto();
-    
+  }else{
+    agregarProducto();
   }
 }
 
 function editarProducto(){
-
-  console.log('desde la funcion editar funkopop');
-
+  console.log('desde la funcion editar')
+  //validar nuevamente los datos
   let codigo = document.getElementById('codigo').value;
-  let nombre = document.getElementById('nombreProducto').value;
+  let nombre = document.getElementById('nombre').value;
   let categoria = document.getElementById('categoria').value;
   let descripcion = document.getElementById('descripcion').value;
-  let destacar = document.getElementById('checkDestacar').checked;
-  let publicar = document.getElementById('checkPublicar').checked;
-
+  
   limpiarFormulario();
+
   for(let i in listaProductos){
     if(listaProductos[i].codigo === codigo){
       listaProductos[i].nombre = nombre;
       listaProductos[i].categoria = categoria;
       listaProductos[i].descripcion = descripcion;
-      listaProductos[i].destacar = destacar;
-      listaProductos[i].publicar = publicar;
     }
   }
-
+  // guardar el arreglo modificado en el local storage
   localStorage.setItem('listaProductoKey', JSON.stringify(listaProductos));
   leerProductoLS();
 
   Swal.fire(
     'Producto modificado',
-    'El video juego se actualizo correctamente',
+    'El funkopop se actualizo correctamente',
     'success'
   )
-  // cerrar ventana modal
+  
   modalProducto.hide();
+
+
 }
+
 
