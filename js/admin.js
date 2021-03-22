@@ -17,7 +17,7 @@ leerProductoLS();
 
 window.agregarProducto = function(event){
 
-    //event.preventDefault();
+    event.preventDefault();
     
 
     let codigo = document.getElementById('codigo').value;
@@ -27,8 +27,8 @@ window.agregarProducto = function(event){
     let publicado = document.getElementById('publicar').checked;
     let destacar = document.getElementById('destacar').checked;
     
-   let nuevoproducto = new Producto (codigo, nombre, categoria, descripcion,publicado,destacar)
-    console.log(nuevoproducto);
+   let nuevoproducto = new Producto (codigo, nombre, categoria, descripcion,publicado,destacar);
+
    listaProductos.push(nuevoproducto); 
 
    console.log(listaProductos);

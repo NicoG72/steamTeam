@@ -22,7 +22,7 @@
     <title>Steam Game</title>
   </head>
 
-  <body class="colorTexto colorBase">
+  <body class="colorTexto colorBase" onload="juegoDestacado(event)">
     <header>
       <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
@@ -92,7 +92,7 @@
           </div>
         </article>
         
-        <section class="mt-5">
+        <section class="mt-5" id="juegoDestacado">
           <div class="card mb-3">
             <div class="row g-0">
               <div class="col-md-8">
@@ -747,5 +747,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="js/contacto.js"></script>
+    <script type="module" src="js/index.js"></script>
   </body>
 </html>
