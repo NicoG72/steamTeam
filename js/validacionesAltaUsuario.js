@@ -39,11 +39,8 @@ window.validarEmail = function(email){
         usuario.className= "form-control is-invalid"
         return false;
   }};
-<<<<<<< HEAD
-=======
 
 
->>>>>>> userLog
 //valido contraseña
 window.validarPassword = function (pass){
     console.log(pass);
@@ -57,8 +54,6 @@ window.validarPassword = function (pass){
     }
 }
 
-<<<<<<< HEAD
-=======
 function usuarioUnico(){
     let usuario = document.getElementById("nombreUsuario").value;
     let email = document.getElementById("emailUsuario").value;
@@ -92,7 +87,6 @@ function usuarioUnico(){
 }   
 
 //creo la funcion validar general el nuevo usuasrio
->>>>>>> userLog
 function validarNuevoUsuario(){
 
     if(validarEmail(document.getElementById("emailUsuario"))===true && validarNombreUsuario(document.getElementById("nombreUsuario"))===true && validarPassword(document.getElementById("passUsuario"))===true  ){

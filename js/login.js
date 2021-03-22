@@ -3,12 +3,12 @@ import{listaUsuarios} from "./validacionesAltaUsuario.js"
 
 
 window.validarUsuario =function (input){
-    if (input.value.trim() === "") {
+    if (input.value.trim() != "") {
+      input.className = "form-control is-valid";
+    return true;
+  } else {
     input.className = "form-control is-invalid";
     return false;
-  } else {
-    input.className = "form-control is-valid";
-    return true;
   }
 }
 window.validarPassword=function (pass){
@@ -44,17 +44,6 @@ window.validacionLogin= function (event){
   }
   
   
-
-<<<<<<< HEAD
-      location.href="admin.html";
-  
-      // habilitar en el nav el link "admin"
-=======
-
->>>>>>> userLog
-
-
-
 
 
   // }else if(validarUsuario(document.getElementById('usuario'))===true && validarPassword(document.getElementById('password'))===true && controlUsuarios()===true 
