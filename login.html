@@ -41,7 +41,13 @@
           <form class="d-flex">
             <ul class="navbar-nav me-2">
               <li class="nav-item" id="navLogin">
-                <a class="nav-link active" href="login.html">Login</a>
+                <a class="nav-link" id="login" href="#">Login</a>
+              </li>
+              <li class="nav-item d-none" id="cerrarSesion">
+                <button type="button" class="btn d-none" id="cerrarS" onclick="cerrarSesion()">Cerrar Sesion</button>
+              </li>
+              <li class="nav-item d-none" id="user">
+                <a class="nav-link" id="nombreUser"></a>
               </li>
               <li class="nav-item d-none" id="navAdmin">
                 <a class="nav-link" href="admin.html">Admin</a>
@@ -77,16 +83,14 @@
                   <span class="input-group-text"><i class="bi bi-shield-lock-fill"></i></span>
                   <input type="password" class="form-control" maxlength="10" id="password"
                     onblur="validarPassword(this)">
-                  <div class="invalid-feedback">
+                  <div class="invalid-feedback" id="feedbackPassword">
                     Ups!. Error recuerda que la contraseña debe contener entre (6-10) caracteres.
                   </div>
                 </div>
               </div>
-              <button class="btn colorBase text-light border-light" type="submit">Login</button>
-
-              <button class="btn btn-success text-light border-light" type="button" data-bs-toggle="modal"
-                data-bs-target="#modalUsuario"> <a id="linkRegistro" class="small">
-                  Registrarme</a></button>
+              <button class="btn colorBase text-light border-light" type="submit" id="logIN">Login</button>
+              <a id="linkRegistro" class="small" data-bs-toggle="modal" data-bs-target="#modalUsuario">
+                Registrarme</a>
             </form>
           </div>
         </section>
@@ -220,7 +224,9 @@
     crossorigin="anonymous"></script>
   <script type="module" src="js/login.js"></script>
   <script type="module" src="js/validacionesAltaUsuario.js"></script>
-  <!-- <script type="module" src="js/validaciones.js"></script> -->
+  <script type="module" src="js/usuarioLogueado.js"></script>
+
+  
 </body>
 
 </html>
