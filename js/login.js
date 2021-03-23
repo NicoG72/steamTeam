@@ -67,22 +67,3 @@ window.validacionLogin= function (event){
     
   }
   
-
-
-  
-
-
-  // }else if(validarUsuario(document.getElementById('usuario'))===true && validarPassword(document.getElementById('password'))===true && controlUsuarios()===true 
-  // ){
-  //   document.getElementById("navUsuario").className = "nav-item";
-
-  //   // location.href="admin.html";
-    
-  // }else if(document.getElementById("password").value != usuarioAdmin.password){
-  //   console.log("password incorrecto");
-  //   document.getElementById("password").className="form-control is-invalid"
-  //   document.getElementById("feedbackPassword").innerHTML = "password incorrecto"
-  // }
-    
- 
-
