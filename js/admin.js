@@ -57,7 +57,7 @@ function limpiarFormulario(){
 }
 
 function leerProductoLS(){
-    if(localStorage.length > 0){
+    if(localStorage.getItem("listaProductosKey")> 0){
         let _listaProductoLS = JSON.parse(localStorage.getItem('listaProductoKey'));
         
         if(listaProductos.length === 0){
