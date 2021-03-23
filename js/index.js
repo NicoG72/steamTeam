@@ -78,7 +78,7 @@ window.juegoDestacado = function (event) {
         <div class="col-sm-3 my-2 responsive">
         <a href="detalleJuego.html"
         id="${listaJuegos[i].codigo}"
-        onclick="pasarId(this)"
+        onclick="enviarMensaje(${listaJuegos[i].codigo})"
           ><img
             src="img/inicio/${listaJuegos[i].imagen}"
             class="w-100"
@@ -92,7 +92,6 @@ window.juegoDestacado = function (event) {
         <div class="col-sm-3 my-2 responsive">
         <a href="detalleJuego.html"
         id="${listaJuegos[i].codigo}"
-        onclick="pasarId(this)"
           ><img
             src="img/inicio/${listaJuegos[i].imagen}"
             class="w-100"
@@ -106,7 +105,6 @@ window.juegoDestacado = function (event) {
         <div class="col-sm-3 my-2 responsive">
         <a href="detalleJuego.html"
         id="${listaJuegos[i].codigo}"
-        onclick="pasarId(this)"
           ><img
             src="img/inicio/${listaJuegos[i].imagen}"
             class="w-100"
@@ -120,7 +118,6 @@ window.juegoDestacado = function (event) {
         <div class="col-sm-3 my-2 responsive">
         <a href="detalleJuego.html"
         id="${listaJuegos[i].codigo}"
-        onclick="pasarId(this)"
           ><img
             src="img/inicio/${listaJuegos[i].imagen}"
             class="w-100"
@@ -134,7 +131,6 @@ window.juegoDestacado = function (event) {
         <div class="col-sm-3 my-2 responsive">
         <a href="detalleJuego.html"
         id="${listaJuegos[i].codigo}"
-        onclick="pasarId(this)"
           ><img
             src="img/inicio/${listaJuegos[i].imagen}"
             class="w-100"
@@ -148,7 +144,6 @@ window.juegoDestacado = function (event) {
         <div class="col-sm-3 my-2 responsive">
         <a href="detalleJuego.html"
         id="${listaJuegos[i].codigo}"
-        onclick="pasarId(this)"
           ><img
             src="img/inicio/${listaJuegos[i].imagen}"
             class="w-100"
@@ -162,7 +157,6 @@ window.juegoDestacado = function (event) {
         <div class="col-sm-3 my-2 responsive">
         <a href="detalleJuego.html"
         id="${listaJuegos[i].codigo}"
-        onclick="pasarId(this)"
           ><img
             src="img/inicio/${listaJuegos[i].imagen}"
             class="w-100"
@@ -176,7 +170,6 @@ window.juegoDestacado = function (event) {
         <div class="col-sm-3 my-2 responsive">
         <a href="detalleJuego.html"
         id="${listaJuegos[i].codigo}"
-        onclick="pasarId(this)"
           ><img
             src="img/inicio/${listaJuegos[i].imagen}"
             class="w-100"
@@ -188,6 +181,11 @@ window.juegoDestacado = function (event) {
       
     }
   }
+}
+
+window.pasarId = function(event){
+  event.preventDefault();
+  console.log(event);
 }
 
 
