@@ -52,19 +52,4 @@ window.cerrarSesion=function(){
         location.href="index.html";
     
     }
-   
 }
-
-//let sesion = document.getElementById("cerrarS");
-//sesion.addEventListener("click", function(){cerrarSesion()});
-// window.cerrarSesion = function(){
-//     localStorage.removeItem("usuariologueado");
-//     location.href="index.html"
-//     document.getElementById("navLogin").className="nav-item";
-//     document.getElementById("navAdmin").className="nav-item d-none";
-//     document.getElementById("cerrarSesion").className ="nav-item d-none"
-//     document.getElementById("user").className="nav-item d-none"
-//   }
-  
-  
-  

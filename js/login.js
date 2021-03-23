@@ -12,7 +12,7 @@ window.validarUsuario =function (input){
   }
 }
 window.validarPassword=function (pass){
-  if (pass.value.trim() != "" && pass.value.length >= 10) {
+  if (pass.value.trim() != "" && pass.value.length >= 6) {
     pass.className = "form-control is-valid";
     return true;
   } else {

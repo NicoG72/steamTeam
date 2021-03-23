@@ -1,5 +1,5 @@
 import {Producto} from './productClass.js'
-// import {cerrarSesion} from './login.js'
+
 
 //variable global este arreglo tendra todos los productos que guardo en mi local storage
 let listaProductos=[];
@@ -23,7 +23,7 @@ leerProductoLS();
 
 function agregarProducto (){
 
-    //event.preventDefault();
+    
     let codigo = document.getElementById('codigo').value;
     let nombre = document.getElementById('nombre').value;
     let categoria = document.getElementById('categoria').value;
@@ -57,7 +57,7 @@ function limpiarFormulario(){
 }
 
 function leerProductoLS(){
-    if(localStorage.length > 0){
+    if(localStorage.getItem("listaProductoKey")){
         let _listaProductoLS = JSON.parse(localStorage.getItem('listaProductoKey'));
         
         if(listaProductos.length === 0){
@@ -65,10 +65,11 @@ function leerProductoLS(){
         }
         dibujarTabla(_listaProductoLS);
     }
+  
 }
 
 function dibujarTabla (Productos){
-    console.log(Productos);
+    console.log("dibujar tabla");
      //traigo el cuerpo de la tabla el padra tbody
      let tproducto = document.getElementById('tablaProductos');
      let filaProdc = "";
