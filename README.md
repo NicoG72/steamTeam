@@ -10,7 +10,7 @@ _Para utilizar este proyecto solo debes clonar este repositorio_
 
 **`git clone https://github.com/NicoG72/steamTeam.git `**
 
-_Una vez iniciada la pagina, es necesario registrar previamente el usuario **"admin"** para poder tener acceso a las funcionalidades de la pagina **Admin.html**_
+
 
 
 ## Construido con 🛠
