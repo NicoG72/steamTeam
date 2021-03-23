@@ -15,9 +15,9 @@ window.juegoDestacado = function (event) {
                   <div class="row g-0">
                     <div class="col-md-8">
                       <img
-                        src="img/inicio/fifa_20.png"
+                        src="img/inicio/${listaJuego[i].imagen}"
                         class="w-100"
-                        alt="${listaJuego[i].descripcion}"
+                        alt="${listaJuego[i].nombre}"
                       />
                     </div>
                     <div class="col-md-4 bg-dark d-flex align-items-center">
@@ -44,7 +44,7 @@ window.juegoDestacado = function (event) {
   }
 };
 
-function cargarJuego (){
+  function cargarJuego (){
   console.log("Cargar Juego");
   let fila = "";
   let listaJuegos = JSON.parse(localStorage.getItem('listaProductoKey'));
@@ -76,102 +76,118 @@ function cargarJuego (){
         contador ++;
         fila = `
         <div class="col-sm-3 my-2 responsive">
-          <a href="detalleJuego.html"
-            ><img
-              src="img/inicio/grandtheftauto.jpg"
-              class="w-100"
-              alt="${listaJuegos[i].nombre}"
-          /></a>
+        <a href="detalleJuego.html"
+        id="${listaJuegos[i].codigo}"
+        onclick="pasarId(this)"
+          ><img
+            src="img/inicio/${listaJuegos[i].imagen}"
+            class="w-100"
+            alt="${listaJuegos[i].nombre}"
+        /></a>
         </div>`;
         padre.innerHTML += fila;
       }else if(listaJuegos[i].publicado == true && listaJuegos[i].categoria == 'deportes' && contador >= 4){
         contador ++;
         fila = `
         <div class="col-sm-3 my-2 responsive">
-          <a href="detalleJuego.html"
-            ><img
-              src="img/inicio/grandtheftauto.jpg"
-              class="w-100"
-              alt="${listaJuegos[i].nombre}"
-          /></a>
+        <a href="detalleJuego.html"
+        id="${listaJuegos[i].codigo}"
+        onclick="pasarId(this)"
+          ><img
+            src="img/inicio/${listaJuegos[i].imagen}"
+            class="w-100"
+            alt="${listaJuegos[i].nombre}"
+        /></a>
         </div>`;
         padre2.innerHTML += fila;
       }else if(listaJuegos[i].publicado == true && listaJuegos[i].categoria == 'aventuras' && contador1 < 4){
         contador1 ++;
         fila = `
         <div class="col-sm-3 my-2 responsive">
-          <a href="detalleJuego.html"
-            ><img
-              src="img/inicio/grandtheftauto.jpg"
-              class="w-100"
-              alt="${listaJuegos[i].nombre}"
-          /></a>
+        <a href="detalleJuego.html"
+        id="${listaJuegos[i].codigo}"
+        onclick="pasarId(this)"
+          ><img
+            src="img/inicio/${listaJuegos[i].imagen}"
+            class="w-100"
+            alt="${listaJuegos[i].nombre}"
+        /></a>
         </div>`;
         padreAventuras.innerHTML += fila;
       }else if(listaJuegos[i].publicado == true && listaJuegos[i].categoria =='aventuras' && contador1 >= 4){
         contador1 ++;
         fila = `
         <div class="col-sm-3 my-2 responsive">
-          <a href="detalleJuego.html"
-            ><img
-              src="img/inicio/grandtheftauto.jpg"
-              class="w-100"
-              alt="${listaJuegos[i].nombre}"
-          /></a>
+        <a href="detalleJuego.html"
+        id="${listaJuegos[i].codigo}"
+        onclick="pasarId(this)"
+          ><img
+            src="img/inicio/${listaJuegos[i].imagen}"
+            class="w-100"
+            alt="${listaJuegos[i].nombre}"
+        /></a>
         </div>`;
         padreAventuras2.innerHTML += fila;
       }else if(listaJuegos[i].publicado == true && listaJuegos[i].categoria == 'estrategia' && contador2 < 4){
         contador2 ++;
         fila = `
         <div class="col-sm-3 my-2 responsive">
-          <a href="detalleJuego.html"
-            ><img
-              src="img/inicio/grandtheftauto.jpg"
-              class="w-100"
-              alt="${listaJuegos[i].nombre}"
-          /></a>
+        <a href="detalleJuego.html"
+        id="${listaJuegos[i].codigo}"
+        onclick="pasarId(this)"
+          ><img
+            src="img/inicio/${listaJuegos[i].imagen}"
+            class="w-100"
+            alt="${listaJuegos[i].nombre}"
+        /></a>
         </div>`;
         padreEstrategia.innerHTML += fila;
       }else if(listaJuegos[i].publicado == true && listaJuegos[i].categoria == 'estrategia' && contador2 >= 4){
         contador2 ++;
         fila = `
         <div class="col-sm-3 my-2 responsive">
-          <a href="detalleJuego.html"
-            ><img
-              src="img/inicio/grandtheftauto.jpg"
-              class="w-100"
-              alt="${listaJuegos[i].nombre}"
-          /></a>
+        <a href="detalleJuego.html"
+        id="${listaJuegos[i].codigo}"
+        onclick="pasarId(this)"
+          ><img
+            src="img/inicio/${listaJuegos[i].imagen}"
+            class="w-100"
+            alt="${listaJuegos[i].nombre}"
+        /></a>
         </div>`;
         padreEstrategia2.innerHTML += fila;
       }else if(listaJuegos[i].publicado == true && listaJuegos[i].categoria == 'infantiles' && contador3 < 4){
         contador3 ++;
         fila = `
         <div class="col-sm-3 my-2 responsive">
-          <a href="detalleJuego.html"
-            ><img
-              src="img/inicio/grandtheftauto.jpg"
-              class="w-100"
-              alt="${listaJuegos[i].nombre}"
-          /></a>
+        <a href="detalleJuego.html"
+        id="${listaJuegos[i].codigo}"
+        onclick="pasarId(this)"
+          ><img
+            src="img/inicio/${listaJuegos[i].imagen}"
+            class="w-100"
+            alt="${listaJuegos[i].nombre}"
+        /></a>
         </div>`;
         padreInfantiles.innerHTML += fila;
       }else if(listaJuegos[i].publicado == true && listaJuegos[i].categoria == 'infantiles' && contador >= 4){
         contador3 ++;
         fila = `
         <div class="col-sm-3 my-2 responsive">
-          <a href="detalleJuego.html"
-            ><img
-              src="img/inicio/grandtheftauto.jpg"
-              class="w-100"
-              alt="${listaJuegos[i].nombre}"
-          /></a>
+        <a href="detalleJuego.html"
+        id="${listaJuegos[i].codigo}"
+        onclick="pasarId(this)"
+          ><img
+            src="img/inicio/${listaJuegos[i].imagen}"
+            class="w-100"
+            alt="${listaJuegos[i].nombre}"
+        /></a>
         </div>`;
         padreInfantiles2.innerHTML += fila;
       }
       
     }
   }
-
-
 }
+
+
