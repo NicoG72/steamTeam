@@ -28,10 +28,11 @@ function agregarProducto (){
     let nombre = document.getElementById('nombre').value;
     let categoria = document.getElementById('categoria').value;
     let descripcion = document.getElementById('descripcion').value;
+    let imagen = document.getElementById('imagen').value;
     let publicado = document.getElementById('publicar').checked;
     let destacar = document.getElementById('destacar').checked;
-    
-   let nuevoproducto = new Producto (codigo, nombre, categoria, descripcion,publicado,destacar);
+    console.log(publicado);
+   let nuevoproducto = new Producto (codigo, nombre, categoria, descripcion,imagen,publicado,destacar);
 
    listaProductos.push(nuevoproducto); 
 
@@ -82,6 +83,7 @@ function dibujarTabla (Productos){
         <th>${Productos[i].nombre}</th>
         <th>${Productos[i].categoria}</th>
         <th>${Productos[i].descripcion}</th>
+        <th>${Productos[i].imagen}</th>
         <th><input type="checkbox" ${Productos[i].publicado ? 'checked' : ''} onchange="publicarProducto('${Productos[i].codigo}')" id="publicar" class="form-check-input"></th>
         <th><button><i class="fas fa-star" onclick="destacarProducto(this)"id="${Productos[i].codigo}"></i></button></th>
 
@@ -108,11 +110,21 @@ window.publicarProducto = function (codigo){
        
       }    
       localStorage.setItem('listaProductoKey', JSON.stringify(_listaProductoLS));
+
+      let prodpub = document.getElementById('publicar').checked;
+     if(prodpub == true){
       Swal.fire(
         'Producto Publicado',
-        'El Producto se publico correctamente',
+        'El Producto se publico exitoxamente',
         'success'
       )
+     }else{
+      Swal.fire(
+        'Producto se ha despublicado',
+        
+      )
+     }
+      
 }
 
 window.destacarProducto = function (boton){
@@ -133,21 +145,11 @@ window.destacarProducto = function (boton){
   let destacar = listaProductos.find(producto => producto.codigo === boton.id);
   console.log(destacar);
 
-  // let destacado = document.getElementById(boton.id);
-  // console.log(destacado);
-  // destacado.className = "fas fa-star text-primary";
-
-
-  let _listaProductoLS = JSON.parse(localStorage.getItem('listaProductoKey'));
-    
-    
-
+  
 
 }
 
 
-
-//funcion eliminar producto 
 window.eliminarProductos = function (boton){
     Swal.fire({
         title: '¿Está seguro que quiere eliminar el juego?',
@@ -187,7 +189,8 @@ window.cargarProducto = function (boton){
   document.getElementById('nombre').value = productoEncontrado.nombre;
   document.getElementById('categoria').value= productoEncontrado.categoria;
   document.getElementById('descripcion').value = productoEncontrado.descripcion;
-  document.getElementById('publicar').checked = productoEncontrado.publicar;
+  document.getElementById('imagen').value = productoEncontrado.imagen;
+  document.getElementById('publicar').checked = productoEncontrado.publicado;
   document.getElementById('destacar').checked = productoEncontrado.destacar;
 
   if( modificarProducto = true){
@@ -220,6 +223,9 @@ function editarProducto(){
   let nombre = document.getElementById('nombre').value;
   let categoria = document.getElementById('categoria').value;
   let descripcion = document.getElementById('descripcion').value;
+  let imagen = document.getElementById('imagen').value;
+  let publicado = document.getElementById('publicar').checked;
+    let destacar = document.getElementById('destacar').checked;
   
   limpiarFormulario();
 
@@ -229,6 +235,10 @@ function editarProducto(){
       listaProductos[i].nombre = nombre;
       listaProductos[i].categoria = categoria;
       listaProductos[i].descripcion = descripcion;
+      listaProductos[i].imagen = imagen;
+      listaProductos[i].publica= publicado;
+      listaProductos[i].destacar = destacar;
+
     }
   }
   // guardar el arreglo modificado en el local storage

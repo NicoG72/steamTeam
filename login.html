@@ -14,6 +14,12 @@
     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
   <link rel="stylesheet" href="css/stylesheet.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.5/dist/sweetalert2.all.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init("user_CKkMDv2H6AeHBqoNvuu8F");
+    })();
+  </script>
   <title>Login</title>
 </head>
 
@@ -44,7 +50,7 @@
                 <a class="nav-link" id="login" href="#">Login</a>
               </li>
               <li class="nav-item d-none" id="cerrarSesion">
-                <button type="button" class="btn d-none" id="cerrarS" onclick="cerrarSesion()">Cerrar Sesion</button>
+                <button type="button" class="btn text-light" id="cerrarS" onclick="cerrarSesion()">Cerrar Sesion</button>
               </li>
               <li class="nav-item d-none" id="user">
                 <a class="nav-link" id="nombreUser"></a>
@@ -72,7 +78,7 @@
                 <div class="input-group">
                   <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
                   <input type="text" class="form-control" id="usuario" onblur="validarUsuario(this)">
-                  <div class="invalid-feedback">
+                  <div class="invalid-feedback" id="feedbackUser">
                     Ups!. Los datos ingresados son incorrectos, por favor ingresalos nuevamente.
                   </div>
                 </div>
@@ -81,7 +87,7 @@
                 <label class="form-label"> Password: </label>
                 <div class="input-group">
                   <span class="input-group-text"><i class="bi bi-shield-lock-fill"></i></span>
-                  <input type="password" class="form-control" maxlength="10" id="password"
+                  <input type="password" class="form-control" maxlength="15" id="password"
                     onblur="validarPassword(this)">
                   <div class="invalid-feedback" id="feedbackPassword">
                     Ups!. Error recuerda que la contraseña debe contener entre (6-10) caracteres.
@@ -156,6 +162,7 @@
             </div>
             <button type="submit" class="btn btn-primary">Registrarse</button>
           </form>
+          <div class="alert alert-success mt-3 d-none" role="alert" id="alerta"></div>
         </div>
       </div>
     </div>
