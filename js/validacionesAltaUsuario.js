@@ -100,8 +100,6 @@ window.crearNuevoUsuario= function (event){
         const emailCargado = listaUsuarios.find((usuario)=>usuario.email===nuevoUsuario.email );
         const usuarioCargado = listaUsuarios.find((usuario)=> usuario.usuario=== nuevoUsuario.usuario);
 
-        
-
       if (emailCargado) {
         return document.getElementById('emailUsuario').className = 'form-control is-invalid',
      document.getElementById('feedbackEmail').innerHTML= 'El Email ingresado ya se encuentra en uso, Por favor ingresa uno nuevo';

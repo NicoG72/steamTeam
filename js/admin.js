@@ -1,5 +1,5 @@
 import {Producto} from './productClass.js'
-// import {cerrarSesion} from './login.js'
+
 
 //variable global este arreglo tendra todos los productos que guardo en mi local storage
 let listaProductos=[];
@@ -23,7 +23,7 @@ leerProductoLS();
 
 function agregarProducto (){
 
-    //event.preventDefault();
+    
     let codigo = document.getElementById('codigo').value;
     let nombre = document.getElementById('nombre').value;
     let categoria = document.getElementById('categoria').value;
