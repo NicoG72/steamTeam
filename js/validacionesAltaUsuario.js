@@ -43,7 +43,6 @@ window.validarEmail = function(email){
 
 //valido contraseña
 
-
 function usuarioUnico(){
     let usuario = document.getElementById("nombreUsuario").value;
     let email = document.getElementById("emailUsuario").value;
@@ -73,7 +72,6 @@ function usuarioUnico(){
                 return false;
             }   
         }
-    
 }   
 
 //creo la funcion validar general el nuevo usuasrio
@@ -118,16 +116,14 @@ window.crearNuevoUsuario= function (event){
 
         localStorage.setItem("listaUsuariosKey", JSON.stringify(listaUsuarios));
 
-        Swal.fire(
-            'Bienvenido',
-            'Su usuario ha sido creado correctamente',
-            'success'
-          )
-          leerDatosLS();
-          limpiarFormUsuario();
-          modalUsuario.hide();
+        enviarSolicitudAlta();
+        leerDatosLS();
+        limpiarFormUsuario();
+        modalUsuario.hide();
 
-    }else{console.log("nuevo usuario invalido");}
+    }else{
+        console.log("nuevo usuario invalido");
+}
 }
 
 export function leerDatosLS(){
@@ -137,6 +133,32 @@ export function leerDatosLS(){
             listaUsuarios = _listaUsuarios
         }
     }
+}
+
+
+function enviarSolicitudAlta() {
+    emailjs.send("service_nc6s2ua","template_2hgp0pb",{
+  from_name: `${document.getElementById('nombreUsuario').value}`,
+  to_name: "Steam Team",
+  Email: `Correo Electronico: ${document.getElementById('emailUsuario').value}`,
+  Consulta: `Solicitud de Usuario`,
+  }).then(function (response){
+      console.log(response);
+       Swal.fire(
+           
+           'Bienvenido',
+                   'Su usuario ha sido creado correctamente',
+                   'success'
+        );
+    }, function (error){
+        console.log(error)
+        Swal.fire({
+            icon: 'error',
+            title: 'Ups! Ocurrio un error',
+            text: 'Intentelo de nuevo mas tarde',
+            footer: '<a href>Why do I have this issue?</a>'
+          })
+  })
 }
 
 function limpiarFormUsuario(){
