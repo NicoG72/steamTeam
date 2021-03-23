@@ -172,6 +172,14 @@ window.cargarProducto = function (boton){
   document.getElementById('descripcion').value = productoEncontrado.descripcion;
   document.getElementById('publicar').checked = productoEncontrado.publicar;
   document.getElementById('destacar').checked = productoEncontrado.destacar;
+
+  if( modificarProducto = true){
+    document.getElementById('codigo').disabled = true;
+    document.getElementById('tituloProducto').innerHTML = "Editar Producto";
+  }else{
+    document.getElementById('codigo').disabled = false;
+  
+  }
  
   modificarProducto = true;
 
