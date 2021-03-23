@@ -21,15 +21,9 @@ btnAgredar.addEventListener('click', function (){
 
 leerProductoLS();
 
-<<<<<<< HEAD
 function agregarProducto (){
 
     //event.preventDefault();
-=======
-function agregarProducto () {
-
-    
->>>>>>> f63b6df1d9e9780be49b61e33f580bce4a4bf8e4
     let codigo = document.getElementById('codigo').value;
     let nombre = document.getElementById('nombre').value;
     let categoria = document.getElementById('categoria').value;
@@ -188,64 +182,31 @@ window.guardarProducto = function(event){
   event.preventDefault();
   console.log("editar Producto");
   if(modificarProducto){
-<<<<<<< HEAD
     editarProducto();
   }else{
-=======
-    console.log("editar Producto");
-    editarProducto();
-  
-  }else{
-  
->>>>>>> f63b6df1d9e9780be49b61e33f580bce4a4bf8e4
     agregarProducto();
   }
 }
 
 function editarProducto(){
-<<<<<<< HEAD
   console.log('desde la funcion editar')
   //validar nuevamente los datos
-=======
-
-  console.log('desde la funcion editar funkopop')
-
-
->>>>>>> f63b6df1d9e9780be49b61e33f580bce4a4bf8e4
   let codigo = document.getElementById('codigo').value;
   let nombre = document.getElementById('nombre').value;
   let categoria = document.getElementById('categoria').value;
   let descripcion = document.getElementById('descripcion').value;
-<<<<<<< HEAD
   
   limpiarFormulario();
 
-=======
-  let publicar = document.getElementById('publicar').checked;
-  let destacar = document.getElementById('destacar').checked;
-  
-  limpiarFormulario();
-
-  // buscar objeto dentro del arreglo listaFunkopop (findIndex)
->>>>>>> f63b6df1d9e9780be49b61e33f580bce4a4bf8e4
   for(let i in listaProductos){
 
     if(listaProductos[i].codigo === codigo){
       listaProductos[i].nombre = nombre;
       listaProductos[i].categoria = categoria;
       listaProductos[i].descripcion = descripcion;
-<<<<<<< HEAD
     }
   }
   // guardar el arreglo modificado en el local storage
-=======
-      listaProductos[i].publicar = publicar;
-      listaProductos[i].destacar = destacar;
-    }
-  }
-  console.log("aqui debe guardar");
-  // guardar el arreglo modificado en localstorage
->>>>>>> f63b6df1d9e9780be49b61e33f580bce4a4bf8e4
   localStorage.setItem('listaProductoKey', JSON.stringify(listaProductos));
   // actualizar la tabla
   console.log("Producto guardado");
@@ -253,21 +214,13 @@ function editarProducto(){
   // mostrar una ventana de producto modificado con sweet alert
   Swal.fire(
     'Producto modificado',
-<<<<<<< HEAD
-    'El funkopop se actualizo correctamente',
-=======
     'El producto se actualizo correctamente',
->>>>>>> f63b6df1d9e9780be49b61e33f580bce4a4bf8e4
     'success'
   )
   
   modalProducto.hide();
-<<<<<<< HEAD
 
 
 }
 
 
-=======
-}
->>>>>>> f63b6df1d9e9780be49b61e33f580bce4a4bf8e4
