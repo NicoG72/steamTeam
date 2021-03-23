@@ -31,7 +31,7 @@ function agregarProducto (){
     let imagen = document.getElementById('imagen').value;
     let publicado = document.getElementById('publicar').checked;
     let destacar = document.getElementById('destacar').checked;
-    
+    console.log(publicado);
    let nuevoproducto = new Producto (codigo, nombre, categoria, descripcion,imagen,publicado,destacar);
 
    listaProductos.push(nuevoproducto); 
@@ -110,6 +110,7 @@ window.publicarProducto = function (codigo){
        
       }    
       localStorage.setItem('listaProductoKey', JSON.stringify(_listaProductoLS));
+
       let prodpub = document.getElementById('publicar').checked;
      if(prodpub == true){
       Swal.fire(
@@ -189,7 +190,7 @@ window.cargarProducto = function (boton){
   document.getElementById('categoria').value= productoEncontrado.categoria;
   document.getElementById('descripcion').value = productoEncontrado.descripcion;
   document.getElementById('imagen').value = productoEncontrado.imagen;
-  document.getElementById('publicar').checked = productoEncontrado.publicar;
+  document.getElementById('publicar').checked = productoEncontrado.publicado;
   document.getElementById('destacar').checked = productoEncontrado.destacar;
 
   if( modificarProducto = true){
@@ -223,6 +224,8 @@ function editarProducto(){
   let categoria = document.getElementById('categoria').value;
   let descripcion = document.getElementById('descripcion').value;
   let imagen = document.getElementById('imagen').value;
+  let publicado = document.getElementById('publicar').checked;
+    let destacar = document.getElementById('destacar').checked;
   
   limpiarFormulario();
 
@@ -233,6 +236,8 @@ function editarProducto(){
       listaProductos[i].categoria = categoria;
       listaProductos[i].descripcion = descripcion;
       listaProductos[i].imagen = imagen;
+      listaProductos[i].publica= publicado;
+      listaProductos[i].destacar = destacar;
 
     }
   }
