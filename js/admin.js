@@ -116,9 +116,26 @@ window.publicarProducto = function (codigo){
 }
 
 window.destacarProducto = function (boton){
+  console.log(boton);
   console.log("id del boton" + boton.id);
+  let destacado = document.getElementById(boton.id);
+  for(let i in listaProductos){
+    if(listaProductos[i].codigo == boton.id && listaProductos[i].destacar == true){
+      console.log('true');
+      listaProductos[i].destacar = false;
+      destacado.className = "fas fa-star";
+    }else if(listaProductos[i].codigo == boton.id && listaProductos[i].destacar == false){
+      console.log('false');
+      listaProductos[i].destacar = true;
+      destacado.className = "fas fa-star text-primary"
+    }
+  }
   let destacar = listaProductos.find(producto => producto.codigo === boton.id);
   console.log(destacar);
+
+  // let destacado = document.getElementById(boton.id);
+  // console.log(destacado);
+  // destacado.className = "fas fa-star text-primary";
 
 
   let _listaProductoLS = JSON.parse(localStorage.getItem('listaProductoKey'));
