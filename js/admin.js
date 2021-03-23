@@ -57,7 +57,7 @@ function limpiarFormulario(){
 }
 
 function leerProductoLS(){
-    if(localStorage.getItem("listaProductosKey")> 0){
+    if(localStorage.getItem("listaProductoKey")){
         let _listaProductoLS = JSON.parse(localStorage.getItem('listaProductoKey'));
         
         if(listaProductos.length === 0){
@@ -65,10 +65,11 @@ function leerProductoLS(){
         }
         dibujarTabla(_listaProductoLS);
     }
+  
 }
 
 function dibujarTabla (Productos){
-    console.log(Productos);
+    console.log("dibujar tabla");
      //traigo el cuerpo de la tabla el padra tbody
      let tproducto = document.getElementById('tablaProductos');
      let filaProdc = "";
