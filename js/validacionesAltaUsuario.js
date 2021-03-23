@@ -42,17 +42,7 @@ window.validarEmail = function(email){
 
 
 //valido contraseña
-window.validarPassword = function (pass){
-    console.log(pass);
-    let expresion = /[a-z]+[0-9]/;
-    if(pass.value.trim()!="" && expresion.test(pass.value)){
-        pass.className="form-control is-valid";
-        return true;
-    }else{
-        pass.className="form-control is-invalid";
-        return false;
-    }
-}
+
 
 function usuarioUnico(){
     let usuario = document.getElementById("nombreUsuario").value;

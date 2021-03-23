@@ -28,7 +28,7 @@ function agregarProducto (){
     let nombre = document.getElementById('nombre').value;
     let categoria = document.getElementById('categoria').value;
     let descripcion = document.getElementById('descripcion').value;
-    let imagen = document.getElementById('imagen').imagen;
+    let imagen = document.getElementById('imagen').value;
     let publicado = document.getElementById('publicar').checked;
     let destacar = document.getElementById('destacar').checked;
     
@@ -110,11 +110,20 @@ window.publicarProducto = function (codigo){
        
       }    
       localStorage.setItem('listaProductoKey', JSON.stringify(_listaProductoLS));
+      let prodpub = document.getElementById('publicar').checked;
+     if(prodpub == true){
       Swal.fire(
         'Producto Publicado',
-        'El Producto se publico correctamente',
+        'El Producto se publico exitoxamente',
         'success'
       )
+     }else{
+      Swal.fire(
+        'Producto se ha despublicado',
+        
+      )
+     }
+      
 }
 
 window.destacarProducto = function (boton){
