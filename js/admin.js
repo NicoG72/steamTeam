@@ -1,4 +1,5 @@
 import {Producto} from './productClass.js'
+// import {cerrarSesion} from './login.js'
 
 //variable global este arreglo tendra todos los productos que guardo en mi local storage
 let listaProductos=[];
@@ -11,7 +12,7 @@ const modalProducto = new bootstrap.Modal(document.getElementById('modalProducto
 
 
 let modificarProducto = false;
-let destacarProducto = false;
+
 let btnAgredar = document.getElementById('btnAgregar');
 btnAgredar.addEventListener('click', function (){
     limpiarFormulario();
@@ -20,9 +21,15 @@ btnAgredar.addEventListener('click', function (){
 
 leerProductoLS();
 
+<<<<<<< HEAD
 function agregarProducto (){
 
     //event.preventDefault();
+=======
+function agregarProducto () {
+
+    
+>>>>>>> f63b6df1d9e9780be49b61e33f580bce4a4bf8e4
     let codigo = document.getElementById('codigo').value;
     let nombre = document.getElementById('nombre').value;
     let categoria = document.getElementById('categoria').value;
@@ -30,7 +37,7 @@ function agregarProducto (){
     let publicado = document.getElementById('publicar').checked;
     let destacar = document.getElementById('destacar').checked;
     
-   let nuevoproducto = new Producto (codigo, nombre, categoria, descripcion,publicado,destacar)
+   let nuevoproducto = new Producto (codigo, nombre, categoria, descripcion,publicado,destacar);
 
    listaProductos.push(nuevoproducto); 
 
@@ -66,7 +73,7 @@ function leerProductoLS(){
 }
 
 function dibujarTabla (Productos){
-
+    console.log(Productos);
      //traigo el cuerpo de la tabla el padra tbody
      let tproducto = document.getElementById('tablaProductos');
      let filaProdc = "";
@@ -85,7 +92,7 @@ function dibujarTabla (Productos){
         <th><button><i class="fas fa-star" onclick="destacarProducto(this)"id="${Productos[i].codigo}"></i></button></th>
 
         <th>
-          <button><i class="far fa-edit" onclick="prepararProducto(this)" id="${Productos[i].codigo}"></i></button>
+          <button><i class="far fa-edit" onclick="cargarProducto(this)" id='${Productos[i].codigo}'></i></button>
           <button><i class="far fa-trash-alt" onclick="eliminarProductos(this)" id="${Productos[i].codigo}"></i></button>
           
         </th>
@@ -95,6 +102,7 @@ function dibujarTabla (Productos){
 }
 
 window.publicarProducto = function (codigo){
+  
 
     let _listaProductoLS = JSON.parse(localStorage.getItem('listaProductoKey'));
     
@@ -104,8 +112,7 @@ window.publicarProducto = function (codigo){
             
         }
        
-      }
-    
+      }    
       localStorage.setItem('listaProductoKey', JSON.stringify(_listaProductoLS));
       Swal.fire(
         'Producto Publicado',
@@ -156,7 +163,7 @@ window.eliminarProductos = function (boton){
 }
 
 
-window.prepararProducto = function (boton){
+window.cargarProducto = function (boton){
 
   //obtengo codigo del producto a destacar
   console.log(boton.id);
@@ -175,50 +182,92 @@ window.prepararProducto = function (boton){
   modificarProducto = true;
 
   modalProducto.show();
-
 }
 
 window.guardarProducto = function(event){
   event.preventDefault();
-  console.log("decir que funcion se va a ejecutar");
-
+  console.log("editar Producto");
   if(modificarProducto){
+<<<<<<< HEAD
     editarProducto();
   }else{
+=======
+    console.log("editar Producto");
+    editarProducto();
+  
+  }else{
+  
+>>>>>>> f63b6df1d9e9780be49b61e33f580bce4a4bf8e4
     agregarProducto();
   }
 }
 
 function editarProducto(){
+<<<<<<< HEAD
   console.log('desde la funcion editar')
   //validar nuevamente los datos
+=======
+
+  console.log('desde la funcion editar funkopop')
+
+
+>>>>>>> f63b6df1d9e9780be49b61e33f580bce4a4bf8e4
   let codigo = document.getElementById('codigo').value;
   let nombre = document.getElementById('nombre').value;
   let categoria = document.getElementById('categoria').value;
   let descripcion = document.getElementById('descripcion').value;
+<<<<<<< HEAD
   
   limpiarFormulario();
 
+=======
+  let publicar = document.getElementById('publicar').checked;
+  let destacar = document.getElementById('destacar').checked;
+  
+  limpiarFormulario();
+
+  // buscar objeto dentro del arreglo listaFunkopop (findIndex)
+>>>>>>> f63b6df1d9e9780be49b61e33f580bce4a4bf8e4
   for(let i in listaProductos){
+
     if(listaProductos[i].codigo === codigo){
       listaProductos[i].nombre = nombre;
       listaProductos[i].categoria = categoria;
       listaProductos[i].descripcion = descripcion;
+<<<<<<< HEAD
     }
   }
   // guardar el arreglo modificado en el local storage
+=======
+      listaProductos[i].publicar = publicar;
+      listaProductos[i].destacar = destacar;
+    }
+  }
+  console.log("aqui debe guardar");
+  // guardar el arreglo modificado en localstorage
+>>>>>>> f63b6df1d9e9780be49b61e33f580bce4a4bf8e4
   localStorage.setItem('listaProductoKey', JSON.stringify(listaProductos));
+  // actualizar la tabla
+  console.log("Producto guardado");
   leerProductoLS();
-
+  // mostrar una ventana de producto modificado con sweet alert
   Swal.fire(
     'Producto modificado',
+<<<<<<< HEAD
     'El funkopop se actualizo correctamente',
+=======
+    'El producto se actualizo correctamente',
+>>>>>>> f63b6df1d9e9780be49b61e33f580bce4a4bf8e4
     'success'
   )
   
   modalProducto.hide();
+<<<<<<< HEAD
 
 
 }
 
 
+=======
+}
+>>>>>>> f63b6df1d9e9780be49b61e33f580bce4a4bf8e4

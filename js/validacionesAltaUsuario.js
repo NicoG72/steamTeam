@@ -1,17 +1,16 @@
 import {Usuario} from "./clases.js";
 
 //creo el arreglo para almacenar usuasrios
-let listaUsuarios = [];
+export let listaUsuarios = [];
 
 //defino ventana modal
-const modalUsuario = new bootstrap.Modal(document.getElementById("modalUsuario"));
+const modalUsuario = new bootstrap.Modal(document.querySelector("#modalUsuario"));
 leerDatosLS();
 
 //llamo a la funcion limpiar formulario desde el link de registro
 let linkRegistro = document.getElementById("linkRegistro");
 linkRegistro.addEventListener("click", function(){
     limpiarFormUsuario();
-    
 })
 
 //valido email
@@ -40,11 +39,12 @@ window.validarEmail = function(email){
         usuario.className= "form-control is-invalid"
         return false;
   }};
+
+
 //valido contraseña
 window.validarPassword = function (pass){
     console.log(pass);
     let expresion = /[a-z]+[0-9]/;
-    
     if(pass.value.trim()!="" && expresion.test(pass.value)){
         pass.className="form-control is-valid";
         return true;
@@ -54,9 +54,42 @@ window.validarPassword = function (pass){
     }
 }
 
+function usuarioUnico(){
+    let usuario = document.getElementById("nombreUsuario").value;
+    let email = document.getElementById("emailUsuario").value;
+    let listaUsuarios = JSON.parse(localStorage.getItem("listaUsuariosKey"))
+    for(let i in listaUsuarios){
+        console.log(listaUsuarios[i])
+            if(listaUsuarios[i].usuario != usuario && listaUsuarios[i].email != email){
+                console.log("usuario unico");
+        
+                document.getElementById("nombreUsuario").className="form-control is-valid";
+                document.getElementById("emailUsuario").className="form-control is-valid";
+        
+                return true;         
+             }else if(listaUsuarios[i].email === email){
+                 console.log("email existente");
+        
+                 document.getElementById("feedbackEmail").innerHTML ="El email utilizado ya esta registrado.";
+                 document.getElementById("emailUsuario").className="form-control is-invalid";  
+        
+                 return false;
+            }else if(listaUsuarios[i].usuario === usuario){
+                console.log("usuario existente");
+        
+                document.getElementById("feedbackUsuario").innerHTML ="El usuario utilizado ya esta registrado.";
+                document.getElementById("nombreUsuario").className="form-control is-invalid";  
+                
+                return false;
+            }   
+        }
+    
+}   
+
+//creo la funcion validar general el nuevo usuasrio
 function validarNuevoUsuario(){
 
-    if(validarEmail(document.getElementById("emailUsuario"))===true && validarNombreUsuario(document.getElementById("nombreUsuario"))===true && validarPassword(document.getElementById("passUsuario"))===true){
+    if(validarEmail(document.getElementById("emailUsuario"))===true && validarNombreUsuario(document.getElementById("nombreUsuario"))===true && validarPassword(document.getElementById("passUsuario"))===true  ){
         console.log("nuevo usuario correcto");
         return true;
     } else{console.log("usuario incorrecto");
@@ -105,7 +138,7 @@ window.crearNuevoUsuario= function (event){
     }else{console.log("nuevo usuario invalido");}
 }
 
-function leerDatosLS(){
+export function leerDatosLS(){
     if(localStorage.getItem("listaUsuariosKey")){
         let _listaUsuarios= JSON.parse(localStorage.getItem("listaUsuariosKey")); //lista traida de local storage, pongo _ para diferenciar.
         if(listaUsuarios.length===0){
